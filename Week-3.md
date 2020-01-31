@@ -47,7 +47,7 @@ You can use the terminal to launch Python and run simple tests. You can also sav
 ## Exercise - The Python Challenge!
 
 - The Python Challenge has been on the internet for decades.
-- It's the number one way to learn Python.
+- It's a really great way to learn Python.
 - Work on your own or in groups to solve the first 7 parts of the Python Challenge.
 
 http://www.pythonchallenge.com
