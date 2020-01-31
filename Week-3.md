@@ -40,8 +40,9 @@ You can use the terminal to launch Python and run simple tests. You can also sav
 * variables : ints, floats, strings, lists, tuples (read-only lists), accessing data in lists, dictionaries
 * Basic operators - luckily this stuff is all the same!
 * conditionals, loops, functions
-- for letter in 'Python': print 'Current Letter :', letter
+* for letter in 'Python': print 'Current Letter :', letter
 * keywords, comments
+* import
 
 ## Exercise - The Python Challenge!
 
