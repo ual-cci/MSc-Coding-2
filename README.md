@@ -26,7 +26,7 @@ Week 3 & 4 - Python
 
  - Getting started with Python : Python 2 vs 3, printing to the console, import, variables, conditionals, loops, functions, def
  - Doing the Python Challenge!!!
- - Core libs : matplotlib, pandas, urllib, bs4, gensim, flask.
+ - Core libs : matplotlib, numpy, pandas, urllib, bs4, gensim, bokeh, flask.
  - NLP tools in gensim.   
 
 Week 5 & 6 - Python Machine Learning
