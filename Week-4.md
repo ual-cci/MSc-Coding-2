@@ -54,7 +54,7 @@ You should be using help() or dir() whenever you're not sure how something works
 
 ##  Core libraries
 
-* matplotlib
+### matplotlib
 
 https://matplotlib.org/
 
@@ -81,7 +81,7 @@ There are lots of important core plotting features, including bar charts, pie ch
 
 https://matplotlib.org/gallery/index.html
 
-* Numpy
+### Numpy
 
 https://numpy.org/
 
@@ -124,7 +124,7 @@ print(z)
 
 https://numpy.org/devdocs/user/quickstart.html
 
-* pandas
+### pandas
 
 To be honest, the main reason people use pandas is because it can read in Microsoft excel files and csv files. This makes it handy for people who naturally use excel to collect and organise data.
 
@@ -138,7 +138,7 @@ https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
 
 - https://pandas.pydata.org/docs/index.html
 
-* urllib
+### urllib
 
 https://pythonspot.com/urllib-tutorial-python-3/
 
@@ -156,7 +156,7 @@ print(html)
 
 the 'html' variable / object in the above example now has all the data from the web page in it. But parsing HTML is not easy to do at all. Wouldn't it be great if there was some kind of library for parsing HTML easily? That would just be amazing. Oh wait...
 
-* bs4
+### bs4
 
 bs4, or "Beautiful Soup" is a great html parser, and the basis of a very large number of web scraping softwares. If you're building a scraper, you should start with bs4. Here' an example of a script that grabs some webpage data and iterates through it using bs4.
 
@@ -178,7 +178,7 @@ for link in soup.find_all('a'):
 
 ```
 
-* bokeh
+### bokeh
 
 Bokeh is a great way of creating interactive plots. matplotlib isn't designed for interactive plot generation - it's for generating plots for books and academic papers. Bokeh on the other hand makes it super easy to make a plot that you can interact with on a webpage. Like this :
 
@@ -206,7 +206,7 @@ show(p)
 https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
 
 
-* gensim
+### gensim
 
 https://radimrehurek.com/gensim/
 
