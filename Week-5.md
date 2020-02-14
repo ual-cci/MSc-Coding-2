@@ -23,7 +23,7 @@ Professor Mick Grierson
 ```Python
 from matplotlib import pyplot as plt
 
-# We're going use numpy
+# We're gonna use numpy
 
 import numpy as np
 
