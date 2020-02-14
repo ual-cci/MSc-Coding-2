@@ -1,6 +1,6 @@
 
 
-#Part One - Using Numpy to compute images
+# Part One - Using Numpy to compute images
 
 ## Python Numpy Image Processing Tutorial
 - You can use numpy arrays to do all the things we did in JavaScript with images
