@@ -603,7 +603,7 @@ plt.show()
 ---
 
 # Part Four
-## Exercise: Processing images in Tensorflow
+## Exercise: Getting datasets, processing images and introducing tensorflow
 - Before we start building networks in Tensorflow and exploring what they can do
 - We should probably try and do something simple
 - Like just processing some images
