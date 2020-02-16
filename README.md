@@ -31,18 +31,22 @@ Week 3 & 4 - Python
  - NLP tools in gensim.   
 
 Week 5 & 6 - Python Machine Learning
+- Introduction to Image Processing, Batch processing and Data Handling 
+- Basic Neural Networks by hand - Forward multiply, Forward add, backward pass, calculating derivatives and gradients, numerical gradient, analytic gradient, scaling the gradient to automatically adjust parameters. Back propagation for training Neural Networks.    
 - Introduction to Tensorflow
-- Introduction to PyTorch
+
+Week 7 - More Python Machine Learning
+- Neural Networks for image classification
 - Using Tensorflow to do inference on pre-trained models
 - Exploring CNNs, RNNs, GANs.
 
-Week 7 & 8 - Embedded development
+Week 8 - Embedded development
 - Using ARM architectures - Raspi for prototyping
 - Python and C++ on ARM architectures
 - Designing autonomous embedded systems
 - Using simple sound and light sensors for interaction
 
-Week 9 - Projects
+Week 9 - Project work
 
 # Assessment
 Assessment is by creative project (70%), and completion of in-class assignments (30%).
