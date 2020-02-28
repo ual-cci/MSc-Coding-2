@@ -99,6 +99,7 @@ https://www.youtube.com/watch?v=aircAruvnKk
 
 - Read more about it here:
 
+# https://www.tensorflow.org/tutorials/quickstart/beginner
 
 ## Part Two: Fun wih Colab
 
