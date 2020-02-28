@@ -94,7 +94,8 @@ https://www.youtube.com/watch?v=aircAruvnKk
 
 - Run the tensorflow MNIST demo that I've prepared for you.
 
-- http://www.github.com/ual-cci/MSc-Coding-2/Week-7-MNIST.ipynb
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-MNIST.ipynb
+
 
 - Read more about it here:
 
@@ -119,4 +120,4 @@ https://colab.research.google.com/notebooks/intro.ipynb#scrollTo=P-H6Lw1vyNNd
 - Now that we've looked in detail at the whole process
 - You should be able to tackle this notebook from Parag Mital. It shows you how to design a Neural Network to generate a new image from scratch based on a separate image. It also reinforces some of the learning we've been through and adds further detail.
 
-http://www.github.com/ual-cci/MSc-Coding-2/Week-7-CADL-Lecture2.ipynb
+https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-CADL-Lecture2.ipynb
