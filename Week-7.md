@@ -15,7 +15,7 @@ Last session we focussed on trying to understand what a simple machine learning 
 - We can do this by measuring the distance between the output and the desired output, then passing a value derived from this distance back through the network's parameters.
 
 - This works with single input systems, but is even more powerful if we can have more inputs, so we chain them together
-- We do all this by adjusting the inputs by a small amount, and getting the derivative, which is the difference between input and output.
+- We do all this by adjusting the inputs by a small amount, and getting the derivative, which is the difference between input and output for different parameters of the system, scaled by a small amount (we move slowly towards the target..)
 - When we get all the derivatives together, we get a gradient. This can be thought of as containing direction.
 
 - We use the gradient to adjust the parameters of the network. The difference propagates back through the network.
