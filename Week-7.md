@@ -72,25 +72,26 @@ Last session we focussed on trying to understand what a simple machine learning 
 - The hidden layers then spread out the job of representing different aspects of the image input. These are basically different blocks of pixels - just like in Terence's demo.
 - This leads to the output layer receiving a collection of activiations which it can use to determine what the input image is.
 
-# Weights and Bias
+## Weights, Biases, Activation
 - A trained network is really just a really big grid of weights (values).
 - These weights have been arrived at through the training process, and just tell you what the values of the pixels are for a particular part of the image
-- The training process simply compares the outputs to the input, works out the difference, and propagates this back to adjust the weights a tiny amount in that direction.
+- The training process simply compares the outputs to the input, works out the difference, and propagates this back to adjust the weights a tiny amount in the direction represented by the gradient.
 - Also, you might want to make it harder for the network to get activated. This is useful to help make sure the nodes in the network only activate when there's a strong response.
 - To do this, you can add a bias - usually a negative number - before you pass the output through a sigmoid or rectified linear unit activation function (RELU)
 - RELU is loads better than sigmoid because it's simple.
-- RELU is just a line.
+- RELU is just converts the neuron's combined sum of inputs by weights, with bias, into a diagonal line from zero. Parag mentions it in his second week session, further down this page.
 
 ## SO...
 
 - Each neuron takes all the inputs from the previous layer
-- It then spits out a number between 0 and 1 that is a combination of all the high or low activation in the prior layer pushed in to a function that .
-- This is a simple function, that is part of a larger function - the NN is just a function approximator.
-- This is a surprisingly good explanation:
+- It then spits out a number between 0 and 1 that is a combination of all the high or low activation in the prior layer pushed in to a function.
+- This is all just a simple function, that is part of a larger function - the NN is just a function approximator made up of lots of other functions.
+- Here is a surprisingly good explanation that is pretty easy to grasp:
 
 https://www.youtube.com/watch?v=aircAruvnKk
 
-# Exercise
+# Exercise 1
+
 - Run the tensorflow MNIST demo that I've prepared for you.
 
 - http://www.github.com/ual-cci/MSc-Coding-2/Week-7-MNIST.ipynb
