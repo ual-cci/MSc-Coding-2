@@ -13,16 +13,17 @@ So far we have looked at a selection of software languages, platforms and framew
 Portable devices that can carry out computational tasks in the outside world provide some interesting affordances. Working with small, portable devices opens up many opportunities:
 - Create and install interactive media devices anywhere
 - Use sensors to collect data remotely
-- Build "ambient" computing environments
-- Design and prototype new mobile devices
+- Build "ambient" computing environments (oh .. wait...what are those?)
+- Design and prototype new mobile devices and platforms
 - Design and prototype new computing hardware for bespoke purposes, e.g. music tech devices, vision mixers, autonomous robots etc.
 
 ## Modern hardware prototyping
 
 Planning to deliver everything over existing hardware infrastructure is totally fine. But it has a number of restrictions
 
-- Performance will be defined by capabilities of phones and tablets, or someone else's portable computing hardware (e.g. laptop)
-- So will all interaction
+- Performance will be defined by capabilities of phones and tablets, or someone else's portable computing hardware (e.g. laptop, phone)
+- So will all interaction (so nothing that isn't currently marketed widely e.g. no sliders, knobs, switches, or tactile interfaces)
+- Consequently, limited capacity for interaction research (new forms of interaction)
 - Locked in to an existing hardware and software ecosystem (e.g. app store)
 - Have to abide by existing hardware and software ecosystem agreements
 - Limited potential for trademarking, patents etc.
@@ -40,16 +41,16 @@ Arduino is a great platform and very flexible. However, there are a number of th
 
 ## Limitations of Arduino-type platforms
 Arduino is a certain type of embedded device platform that is often not very fast or capable. It's fine for simple computations. But:
-- It often uses quite a simple CPU - e.g. ARM cortex-M:
-- It has very limited memory (required for doing computation!)
-- It is slow - usually between 16 and 42Mhz.
+- They often use quite a simple CPU - e.g. ARM cortex-M:
+- They have very limited memory (required for doing computation!)
+- They are slow - usually between 16 and 42Mhz.
 
 ## ARM architectures for embedded devices
 - Many embedded devices use ARM cortex M class devices
 - You can find a list of these devices here:
 - https://en.wikipedia.org/wiki/ARM_Cortex-M
 - These devices are great for some forms of hardware prototyping
-- But generally, they lack the speed of conventional mobile platforms
+- But very often, they lack the speed of conventional mobile platforms (although they are still used as part of these types of platforms e.g. for additional processes)
 - They are not that great for contemporary robotics for example.
 
 ## So what does your phone run on?
@@ -65,14 +66,14 @@ Arduino is a certain type of embedded device platform that is often not very fas
 - More powerful ARM devices can be used to create better System on a Chip devices (SOC)
 - These types of SOC devices are great for hardware prototypying
 - They can provide processing power comparable to your phone
-- They can provide excellent interface architecture (serial, USB, GPIO, SDI), graphics (including console-level GPU), Ethernet or even WIFI, bluetooth, and other features.
-- Basically it's a computer - like the one in your mobile phone, or even your chromebook or laptop.
+- They can be easily expanded to provide excellent interface architecture (serial, USB, GPIO, SDI), graphics (including console-level GPU), Ethernet or even WIFI, bluetooth, and other features.
+- Basically it's a computer - like the one in your mobile phone, or even your chromebook or laptop. But it's tiny.
 
 ## Advantages of capable SOC devices
 - Low cost of manufacture
 - Low cost for bulk purchase
 - Open hardware options (all specifications published)
-- Designs for SOC devices available for free
+- Designs for SOC devices available license free for adaptation
 - All SOC parts can be replaced and refactored
 - GPIO
 
@@ -86,7 +87,7 @@ Arduino is a certain type of embedded device platform that is often not very fas
 - You can use it to create patentable technology more easily
 - (it's much easier to patent a device than to patent software)
 
-## Prototyping boards that use
+## Prototyping boards that use ARM-style SOCs
 - There are a great many different types of such platforms
 - Beaglebone, PCDuino, Raspi, Jetson Nano, Chip
 - Some of them have FPGAs on them !
@@ -96,7 +97,7 @@ Arduino is a certain type of embedded device platform that is often not very fas
 ## Raspberry PI
 - Raspberry PI is by far the most popular and widely used SOC-based prototyping platform.
 - Raspberry PI is currently at version 4
-- PI4 is ridiculously powerful:
+- PI4 is ridiculously powerful for such a cheap, small device:
 - SoC: Broadcom BCM2711B0 quad-core A72 (ARMv8-A) 64-bit @ 1.5GHz
 - GPU: Broadcom VideoCore VI (4k dual output)
 - Networking: 2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN
@@ -116,7 +117,8 @@ This is more powerful than many laptops.
 ## OS choice
 - You can run whatever OS you like on your SOC as long as it has an kernel that suits the instruction set of your architecture
 - Raspberry PI uses ARM architecture and there's an OS developed to support it.
-- RASPBIAN is based on Debian linux, and is one of the most reliable operating systems in existence.
+- RASPBIAN is based on Debian linux, and is one of the most reliable operating systems available.
+- Why is that?
 - It's also totally free
 
 ## What can it do?
