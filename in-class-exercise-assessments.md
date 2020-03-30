@@ -52,4 +52,4 @@ Here are details of the in-class exercises you were asked to complete. Of course
 
 ## Week 8 Exercise
 
- - Submit a port of any of the above exercises that runs on the Raspberry PI 4.
+ - Submit a port of any of the above exercises that will run on the Raspberry PI 4.
