@@ -50,6 +50,6 @@ Here are details of the in-class exercises you were asked to complete. Of course
 - Submit your image outputs. If you make any changes to the code, submit your own version of the notebooks, highlighting the changes you made using comments.
 - You should also try to get the code running on your own machine. If you do this, submit the code that runs on your own device.
 
-## Week 8 Exercise
+## Week 8 Exercise
 
  - Submit a port of any of the above exercises that runs on the Raspberry PI 4.
