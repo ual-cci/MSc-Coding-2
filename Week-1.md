@@ -113,7 +113,7 @@ In C++ this is not the case. You need to specify which type of data your variabl
 
 Types of data include int, short, char, string, float, double, long, long double. Here's a useful table to show you the difference.
 
-![data types](https://github.com/ual-cci/MSc-Coding-2/edit/master/types.png)
+![data types](https://github.com/ual-cci/MSc-Coding-2/master/types.png)
 
 - conditionals
 
