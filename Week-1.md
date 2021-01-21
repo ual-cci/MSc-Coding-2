@@ -107,11 +107,13 @@ In C++ the most common way to print to the console is by using 'cout'. 'cout' is
 
 - data types
 
-OK so in JavaScript world, we only have Var, let and const, which can be more or less anything, including floating point data, objects with lots of data, arrays or whatever. 
+OK so in JavaScript world, we only have var, let and const, which can be more or less anything, including floating point data, objects with lots of data, arrays or whatever. 
 
 In C++ this is not the case. You need to specify which type of data your variable is going to hold, just like in GLSL. I love this. 
 
 Types of data include int, short, char, string, float, double, long, long double. Here's a useful table to show you the difference.
+
+[](https://github.com/ual-cci/MSc-Coding-2/edit/master/)
 
 - conditionals
 
