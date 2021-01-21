@@ -4,7 +4,7 @@
 
 Professor Mick Grierson
 
-## Week 1 - Introduction to C++
+# Week 1 - Introduction to C++
 
 This week we will be learning some fundamentals of C++. We won't be trying to become the world's greatest C++ programmers in one day. Instead, we'll be learning the simplest possible subset of C++ approaches that we will need in order to get things done.
 
@@ -13,6 +13,13 @@ C++ is about the most complex language there is. It's also probably the best lan
 Fundamentally, the rule of thumb here is don't try to understand everything all at once - just focus on the essentials, and worry about the complexities once you feel confident with the basics.
 
 ## What we will cover this session
+
+- Getting up and running with an Integrated Development Environment
+- Understanding the basics of working with C++ as a language
+
+This is a **CRASH COURSE** but should not be too hard given how much time we have spent learning JavaScript using C++ constructs. 
+
+The things I'll be introducting you today are as follows:
 
 - main.cpp
 - #include
@@ -29,3 +36,5 @@ Fundamentally, the rule of thumb here is don't try to understand everything all 
 - including and using classes in a project
 
 Following this introduction, we're going to take a look at openFrameworks, which provides lots of functionality for you to explore whilst you settle in to your new C++ chops.
+
+openframeworks.cc
