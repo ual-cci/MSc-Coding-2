@@ -35,6 +35,33 @@ The things I'll be introducting you today are as follows:
 - declaring and defining a class
 - including and using classes in a project
 
+
+# BUT FIRST
+
+## You need to get set up with an Integrated Development Environment (IDE).
+
+There are a couple of options.
+
+- Xcode (Download from the macOS App store)
+
+The current version of Xcode will require you to use the most recent macOS operating system. If you really don't want to update your computer, you can sign up for a free apple developer account and download a version that works on your operating system by exploring the available links here: 
+
+https://developer.apple.com/download/more/
+
+- MS Visual Studio (Download from the visual studio website here
+
+- https://visualstudio.microsoft.com/
+
+This is what you should use if you're on windows.
+
+The current version of Visual Studio claims to allow you to compile C++ code on macOS, which is technically true, but it's not as easy to do this as you might think.
+
+## Linux
+
+You can do everything you need to on the command line using GCC, G++ and MAKE. We will be exploring this later in the course but just make sure your linux distribution has the latest GCC and everything will be fine. 
+
+# OpenFrameworks
+
 Following this introduction, we're going to take a look at openFrameworks, which provides lots of functionality for you to explore whilst you settle in to your new C++ chops.
 
 openframeworks.cc
