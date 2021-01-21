@@ -17,7 +17,7 @@ Fundamentally, the rule of thumb here is don't try to understand everything all 
 - Getting up and running with an Integrated Development Environment
 - Understanding the basics of working with C++ as a language
 
-This is a **CRASH COURSE** but should not be too hard given how much time we have spent learning JavaScript and GLSL, which are very similar to C++. 
+This is a **CRASH COURSE** but should not be too hard given how much time we have spent learning JavaScript and GLSL, which have lots of similarities. 
 
 If you want a nice reference for today's session, you should of course be looking here:
 
