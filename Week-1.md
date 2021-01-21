@@ -25,6 +25,7 @@ https://www.w3schools.com/cpp/default.asp
 
 The things I'll be introducting you today are as follows:
 
+- preprocessing and compilation
 - main.cpp
 - #include
 - printing to the console
@@ -32,11 +33,10 @@ The things I'll be introducting you today are as follows:
 - conditionals
 - loops
 - functions
-- preprocessing and compilation
 - C++ objects / classes
+- declaring and defining a class
 - .h (hpp) .cpp pairs
 - basic macros
-- declaring and defining a class
 - including and using classes in a project
 
 
