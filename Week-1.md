@@ -129,7 +129,7 @@ And these!
 
 - C++ objects / classes
 
-You also know what these are. We've used them a lot in JavaScript, and these days this is very similar to how they exist in C++. However, some of you might not have made your own much. However, they are super easy and we're going to go through them. 
+You also know what these are. We've used them a lot in JavaScript, and these days this is very similar to how they exist in C++. But some of you might not have made your own much. However, they are super easy and we're going to go through them. 
 
 - .h (hpp) .cpp pairs
 
