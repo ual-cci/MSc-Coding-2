@@ -92,8 +92,12 @@ What on earth are addons?
 
 Good things and bad things about various ofxAddons contributions.  
 
+- Useful examples based on last term's course material - image processing, fractals, custom geometry and shaders in OF
+
+
 ## PART TWO: WORKSHOP
 
+Let's build creative software together!!!!!
 
 
 ## PART THREE: LECTURE
@@ -116,8 +120,6 @@ What on earth are pointers and why should I know about them?
 
 - How and why ofxMaxim uses pointers - a quick overview of the maxiSample object
 
-
-- Further examples - Image Processing, Fractals and 3D in OF
 
 # HOMEWORK : Porting a simple project from JavaScript to OF
 
