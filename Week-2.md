@@ -123,6 +123,7 @@ What on earth are pointers and why should I know about them?
 
 # HOMEWORK : Porting a simple project from JavaScript to OF
 
-Find a project from last term that you feel good about or want to do more work on. Pick a simple one.
-Convert this project to openFrameworks. Check the presentations for tips.
-*Avoid using pointers at this stage unless you are feeling cocky. You are just starting out. Pointers are for later. You will definitely want to use them at some point but wait until you get on your feet and have the basics down.*
+Find a project from last term that you feel good about or want to do more work on. 
+Pick a simple one unless you really fancy a challenge
+Convert this project to openFrameworks.
+There are lots of useful hints for how to do this here : https://github.com/ual-cci/MSc-Coding-2/tree/master/week2-more-examples
