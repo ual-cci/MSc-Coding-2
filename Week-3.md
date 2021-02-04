@@ -22,18 +22,23 @@ So let's get started.
 
 ## What we will cover this session
 
-### Getting started
+### Getting started using Python
+
 - How to get Python. How to run Python. Different Python Versions. PIP.
 
 Python is installed by default on macOS. It is a bit more tricky to install on windows. But it's not too difficult. The easiest way to get Python is to use Anaconda. This is what we're going to do. We can install more python software using something called pip. We can also use conda.
 
 - Different ways of using Python - Using the terminal, using anaconda, using jupyter notebook.
 
+- On the command line
+
 You can use the terminal to launch Python and run simple tests. You can also save a series of python commands as a .py file and run it from the command line. You can also run a basic web server using python using SimpleHTTPServer (p2) or http.server (p3)
 
-- Python 2 vs. Python 3. What's the difference and why does it matter?
-- https://python-future.org/imports.html
-- Print functions, xrange / range, string concatenation methods.
+- Differences between Python 2 and Python 3
+
+Print functions
+xrange / range
+string concatenation methods.
 
 ## Python programming basics.
 * Printing to the console, using quotes, indentation / blocks, string concatenation
@@ -44,10 +49,28 @@ You can use the terminal to launch Python and run simple tests. You can also sav
 * keywords, comments
 * import
 
+## Lecture slides !
+
+
+
 ## Exercise - The Python Challenge!
 
 - The Python Challenge has been on the internet for decades.
 - It's a really great way to learn Python.
-- Work on your own or in groups to solve the first 7 parts of the Python Challenge.
+- Work on your own or in groups to solve the first 5 parts of the Python Challenge.
 
 http://www.pythonchallenge.com
+
+## HOMEWORK
+
+Working on your own, devise and create a simple riddle or puzzle inspired by the Python Challenge. You can:
+
+- Hide some information in a section of text
+- Or in an Image
+- Or in some other form of data
+- Then create a simple clue that can help someone else decode in Python.
+
+Next week, we can share our python riddles!
+
+
+
