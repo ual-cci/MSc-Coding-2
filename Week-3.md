@@ -51,7 +51,7 @@ string concatenation methods.
 
 ## Lecture slides !
 
-
+https://github.com/ual-cci/MSc-Coding-2/blob/master/python-intro.pdf
 
 ## Exercise - The Python Challenge!
 
