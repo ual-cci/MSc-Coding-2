@@ -16,15 +16,18 @@ Last week we did a crash course in Python. This was not as hard as it otherwise 
 * Python keywords, Python comments (#)
 * import statements.
 
-We also did the Python Challenge, which is an excellent mechanism for learning Python. If you haven't had a chance to get through the first 6 or 7 challenges, that's OK, especially if you just don't like regular expressions.
+We also did the Python Challenge, which is an excellent mechanism for learning Python. If you haven't had a chance to get to the 5th challenge, that's OK, especially if you have never thought of creating a function that calls itself. I'll talk through the solutions but:
 
 Hackingnote's solutions for Python Challenge are actually really great, and include solutions that work well in Python 3:
 
 https://www.hackingnote.com/en/python-challenge-solutions/level-0
 
-In particular, I recommend that you all have a try at level 7:
+In particular, I recommend that you all have a try at level 7 as it's lots of fun:
 
 https://www.hackingnote.com/en/python-challenge-solutions/level-7
+
+I also asked you to all create your own Python challenge riddle / question. We'll take a look at these in the workshop!
+
 
 ## What we will cover this session
 
