@@ -26,7 +26,7 @@ In particular, I recommend that you all have a try at level 7 as it's lots of fu
 
 https://www.hackingnote.com/en/python-challenge-solutions/level-7
 
-I also asked you to all create your own Python challenge riddle / question. We'll take a look at these in the workshop!
+I also asked you to all create your own Python challenge riddle / question. Please send these to me!
 
 
 ## What we will cover this session
