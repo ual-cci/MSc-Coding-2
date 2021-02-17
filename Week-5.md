@@ -25,13 +25,11 @@ Do these exercises individually or in groups, and share your outcomes and observ
 
 ## Exercise 1
 
+Go through the tutorial as in the lecture here:
+
+https://mimicproject.com/guides/RAPIDMIX
+
 In the first step, you'll be asked to include the rapidLib library
-
-Substite that step for the below code:
-
-<script src="https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js"></script>
-
-Otherwise the tutorial should work.
 
 Try entering inputs. Observe the outputs. Explore how the neural network produces results based on those inputs.
 
