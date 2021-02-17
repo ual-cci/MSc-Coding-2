@@ -1,10 +1,158 @@
 # Coding 2 : Advanced Frameworks
 
-## 2019-2020
+## 2020-21
 
-Professor Mick Grierson
+# Session 5:
 
-# Part One - Using Numpy to compute images
+## Part 1 - Introduction to Creative Machine Learning
+
+## Introduction to fundamental machine learning concepts with RapidLib
+
+---
+
+Follow the Lecture, then go through the exercises in class.
+
+## Lecture:
+
+Grab the PDF presentation here:
+
+- https://github.com/micknoise/Advanced-Creative-Coding-1/blob/master/Session-9.pdf
+
+Start here:
+
+* https://mimicproject.com/code/8de3cbbe-b7c6-d79f-65fa-42fd1aa43a26
+
+
+## Exercise 1
+
+In the first step, you'll be asked to include the rapidLib library
+
+Substite that step for the below code:
+
+<script src="https://www.doc.gold.ac.uk/eavi/rapidmix/RapidLib.js"></script>
+
+Otherwise the tutorial should work.
+
+Try entering inputs. Observe the outputs. Explore how the neural network produces results based on those inputs.
+
+In particular:
+
+* Try entering values that are higher than any of the values in the training set
+* Try entering values that are lower than any of the values in the training set
+* What do you notice about the Neural Network's behaviour?
+
+You can grab the js code for the classification explorer here:
+
+https://mimic-238710.appspot.com/asset/7addbbfe-b039-713d-f9b9-75a6cd00e923/classification-explorer.js
+
+
+---
+
+## Exercise 2
+
+Take a look at the classification explorer here:
+
+https://mimicproject.com/code/7f92bd4e-6d2b-181c-559f-4add766f2095
+
+In order to input training examples, hold down a number key (e.g. 1) and move the mouse (you may have to click inside the example first to bring it into focus).
+
+This will input examples of that class as long as you are holding down that number key. The decision boundary will then be displayed.
+
+Try to choose a set of training examples that will draw the boundary with Class 1 on the left in green and Class 2 on the right in blue.
+
+Try and make the line as straight as possible between the two classes.
+
+Now try to make class 2 occupy the lower right quadrant.
+
+* Have you had to manufacture examples close to the decision boundary to make it fit the shape?
+* How might this effect the make-up of your datasets when working on an actual project?
+* Will it just consist of representative examples of thing you are modelling?
+
+
+---
+
+## Exercise 3
+
+Take a look at this example:
+
+https://mimicproject.com/code/3864f3e5-8263-b70e-5ef9-1037c724d4ec
+
+This extracts Mel-Frequency Ceptrum Coefficients and uses them as input to a KNN classifier.
+
+Create a selection of classes and explore how good the system is.
+
+
+---
+
+## Exercise 4
+
+Take a look at the Regression explorer:
+
+https://mimicproject.com/code/26ab5507-0d25-07eb-cb03-aaa93883765d
+
+* In order to input training examples, click onto screen at any point.
+
+* The X value denotes the input value, whereas the y value denotes the output value. You will then see the regression line drawn as you add values.
+
+* Try to get a feel for what types of lines are capable and how they’re influenced by the training data.
+
+* Create a training set that produces a diagonal line from one corner of the canvas to the other.
+
+* How easy is this to do? What issues do you face?
+
+You can grab the js code for the regression explorer here.
+
+https://mimic-238710.appspot.com/asset/26ab5507-0d25-07eb-cb03-aaa93883765d/regression-explorer.js
+
+---
+
+## Exercise 5
+
+Now we are going to try and see if we can train a model with 3 outputs to behave consistently.
+
+We’re going to one single input to control EXACTLY 3 output parameters.
+
+Fork the below example:
+
+https://mimicproject.com/code/5d67faaa-e4c3-771a-f824-fe5c5b978ab6
+
+This is an example of using a slider as input to control a granular synthesiser (borrowed from Zya)
+
+Granular synths play lots of small fragments (grains) of a soundfile at various positions.
+
+* Play around with the two parameters and click on different parts of the waveform to find some sounds you like.
+
+* When you are ready to record, select the "Record" checkbox.
+
+* When you are ready to play, select the "Run" checkbox.
+
+* This will train your model with the recorded dataset and now all 3 synthesiser parameters will be controlled by just the one value from the input slider.
+
+* Keep recording examples until you can reliably control the output.
+
+---
+
+## Exercise 6
+
+Can you take the simple RapdLib example we created at the start and use it to take different inputs, and control different outputs?
+
+How about using the system for controlling a 3D mesh?
+
+---
+
+## Further reading
+
+If you're interested in coding your own Neural Networks, this is a great tutorial :
+
+https://karpathy.github.io/neuralnets/
+
+
+# Homework: Using Numpy to compute images
+
+This homework is to prepare you for next week's session, when we'll be creating simple machine learning systems in Python.
+Understanding how Numpy works is extremely useful when trying to do this, so in order to get you up to speed, I've created a little tutorial on how to use Numpy to carry out image processing.
+
+Follow the tutorial below, and then use it as a starting point to convert one of last term's graphics examples to Python using Numpy. For example, you might choose to create a version of the mandelbrot set, or some other 2D algorithmic graphics example. You might also choose to create a blur effect, or a simple 3D renderer - it's up to you. But - *don't try to create anything interactive!*. It's really not going to work...
 
 ## Python Numpy Image Processing Tutorial
 - You can use numpy arrays to do all the things we did in JavaScript with images
@@ -215,403 +363,3 @@ plt.imshow(myImage, interpolation="bilinear", clim=(0,1),cmap="gray")
 plt.show()
 
 ```
-# Part Two
-
-## Programming Neural Nets by hand
-- This next tutorial is based on Andrey Karparthy's NN tutorial.
-- https://karpathy.github.io/neuralnets/
-- He puts forward the idea that real values flow forward through simple systems
-- Whilst gradients flow backward through them
-- This is useful for understanding Back Propagation.
-- Let's take a look.
-
-```Python
-
-# We start by creating a simple multiplication 'gate'
-# This is used in the 'forward pass'
-# All this means is that data flows forward through the network
-
-def forwardMultiplyGate(x, y):
-    return x * y
-
-print (forwardMultiplyGate(-2, 3));
-
-print ("we want to get a number bigger than -6 without changing the inputs ourselves. How do we do that?")
-
-```
-## Random Local Search
-- In Neural Nets, we tweak the input values
-- until we get closer to the result we are looking for
-- We can use a random local search to do this
-- we could do this randomly by changing x,y randomly by small amounts
-- and keep track of what works best
-
-```python
-# Random Local Search
-# -----------------
-
-# but it's a rubbish idea.
-
-import math
-import random
-
-x = -2
-y = 3;
-
-def forwardMultiplyGate(x, y):
-    return x * y
-
-tweak_amount = 0.01 # this is a bit like the learning rate
-best_out = -10000000
-best_x = x
-best_y = y
-
-for k in range(100): # 100 is the number of steps
-    x_try = x + tweak_amount * (random.random() * 2 - 1) # tweak x a bit
-    y_try = y + tweak_amount * (random.random() * 2 - 1) # tweak y a bit
-    out = forwardMultiplyGate(x_try, y_try)
-    if out > best_out:
-        # best improvement yet! Keep track of the x and y
-        best_out = out
-        best_x = x_try
-        best_y = y_try
-        print (best_out)
-
-print ("This works, but is not very efficient.")
-
-```
-
-## Numerical Gradient
-- ------------------
-- "The derivative can be thought of as a force on each input
-- as we pull on the output to become higher."
-- ------------------
-
-- Instead of doing a random search,
-- we're going to increase the inputs very slightly
-- and check what happens to the output to see if it's what we expect
-- The amount of change in the output is the DERIVATIVE
-
-- Below, we add h - the tweak amount to x and y,
-- Then we check check the difference between the output
-- And the first output - this difference is
-## the derivative.
-
-```python
-
-def forwardMultiplyGate(x, y):
-    return x * y
-
-x = -2
-y = 3
-out = forwardMultiplyGate(x, y) # -6
-h = 0.0001; # This is the tweak amount. Some say it should be
-# as small as possible but this is small enough
-
-# compute derivative with respect to x
-xph = x + h # -1.9999
-out2 = forwardMultiplyGate(xph, y) # -5.9997
-x_derivative = (out2 - out) / h; # 3.0 - we divide by h to normalise
-
-# compute derivative with respect to y
-yph = y + h # 3.0001
-out3 = forwardMultiplyGate(x, yph) # -6.0002
-y_derivative = (out3 - out) / h # -2.0 - we divide by h to normalise
-
-print ("x_derivative =", x_derivative)
-print ("y_derivative =", y_derivative)
-
-# When we talk about all the inputs together with respect to output,
-# We're actually talking about the GRADIENT
-# not the indiviual derivatives
-
-gradient = [x_derivative,y_derivative]
-
-print ("The Gradient is", gradient)
-
-# move towards the gradient by scaling it a little
-# then moving towards it a bit
-# this is the same as chasing an object
-
-step_size = 0.01; # If this was big, it would work,
-# BUT it might not work with more complex networks
-x = x + (step_size * x_derivative); # x becomes -1.97
-y = y + (step_size * y_derivative); # y becomes 2.98
-out_new = forwardMultiplyGate(x, y) # -5.87! exciting.
-print ("The New Output is", out_new)
-
-```
-
-## So what is the Gradient?
-- The gradient is the direction of the steepest increase
-- This means it's taking the inputs where they need to go
-- To get the output closer to what we want
-- This is exactly how we move towards objects in space
-- Gradients flow backwards through networks
-
-## A different approach
-
-## ANALYTIC GRADIENT
-- -------------------
-
-- The numerical gradient is actually rubbish
-- If we have lots of inputs
-- it is dumb to calculate the gradient
-- by evaluating all the inputs separately all the time
-
-- Instead we're going to use the "analytic gradient"
-- The trick here is that derivative of X actually turned out to be Y
-- So why bother to calculate it at all?
-- Just use Y, and the whole thing gets much simpler to compute
-- As long as we can calculate a base case first, we can use it
-- without having to do so over and over again.
-
-```Python
-
-x = -2
-y = 3
-out = forwardMultiplyGate(x, y)
-x_gradient = y; # because it turns out the gradient of x is y.
-y_gradient = x; # vice versa
-
-step_size = 0.01;
-x += step_size * x_gradient
-y += step_size * y_gradient
-out_new = forwardMultiplyGate(x, y)
-
-print ("New Output =", out_new)
-# In practice NN systems compute the numerical gradient and the analytical gradient
-
-```
-## No inputs though...
-- In order to turn this simple system in to a complex one,
-- We just need lots of these together
-- But we also have to connect them up.
-- In order for this to work, we need to add something extra
-- We need to -add- as well as -multiply-
-
-```Python
-
-# a and b are just local variables, not inputs to the neuron
-def forwardMultiplyGate(a, b):
-    return a * b
-
-def forwardAddGate(a, b):
-    return a + b
-
-def forwardCircuit(x,y,z):
-    q = forwardAddGate(x, y)
-    f = forwardMultiplyGate(q, z)
-    return f
-
-x = -2
-y = 5
-z = -4
-f = forwardCircuit(x, y, z); # output is -12
-
-# Now we add things together, and then multiply
-print (f)
-
-```
-## BUT how do we calculate the gradient now?
-- EASY - we only do it for the inputs we are multiplying.
-- So everything else stays the same
-- It just allows us to chain Neurons together.
-- The derivative of the addition part is always 1
-
-```python
-
-# Let's set this up:
-# initial conditions
-
-def forwardMultiplyGate(a, b):
-    return a * b
-
-def forwardAddGate(a, b):
-    return a + b
-
-def forwardCircuit(x,y,z):
-    q = forwardAddGate(x, y)
-    f = forwardMultiplyGate(q, z)
-    return f
-
-x = -2
-y = 5
-z = -4
-q = forwardAddGate(x, y) # q is 3
-f = forwardMultiplyGate(q, z) # output is -12
-
-print (f)
-
-# gradient of the MULTIPLY gate with respect to its inputs
-# wrt is short for "with respect to"
-derivative_f_wrt_z = q # 3
-derivative_f_wrt_q = z # -4
-
-# derivative of the ADD gate with respect to its inputs
-derivative_q_wrt_x = 1.0
-derivative_q_wrt_y = 1.0
-
-# chain rule
-derivative_f_wrt_x = derivative_q_wrt_x * derivative_f_wrt_q # -4
-derivative_f_wrt_y = derivative_q_wrt_y * derivative_f_wrt_q # -4
-
-# final gradient, from above: [-4, -4, 3]
-gradient_f_wrt_xyz = [derivative_f_wrt_x, derivative_f_wrt_y, derivative_f_wrt_z]
-
-# let the inputs respond to the force/tug:
-step_size = 0.01
-x = x + step_size * derivative_f_wrt_x # -2.04
-y = y + step_size * derivative_f_wrt_y # 4.96
-z = z + step_size * derivative_f_wrt_z # -3.97
-
-# Our circuit now better give higher output:
-q = forwardAddGate(x, y) # q becomes 2.92
-f = forwardMultiplyGate(q, z) # output is -11.59, up from -12!
-
-print (f)
-
-# let's check the derivatives with a numerical gradient check
-# initial conditions
-x = -2
-y = 5
-z = -4
-
-# numerical gradient check
-h = 0.0001;
-x_derivative = (forwardCircuit(x+h,y,z) - forwardCircuit(x,y,z)) / h # -4
-y_derivative = (forwardCircuit(x,y+h,z) - forwardCircuit(x,y,z)) / h # -4
-z_derivative = (forwardCircuit(x,y,z+h) - forwardCircuit(x,y,z)) / h # 3
-
-print (x_derivative,y_derivative,z_derivative)
-print ("That's close enough!")
-
-```
-
-## Activation
-- If the input to a node in a network is high enough
-- We can say that it's activated
-- But often the outputs are really high or really low.
-- It's sometimes useful to squish the output with a function
-- So that negative values tend towards zero
-- And positive values tend towards 1.
-- People use SIGMOID to do this.
-- SIGMOID is an activation function
-
-```python
-# -----------
-# Sigmoid Function - f = 1.0 / (1.0 + math.exp(-x))
-# This function is often used as
-# an activation function in Neural Networks
-
-
-import numpy as np
-import matplotlib.pyplot as plt
-
-input_sig = np.arange(-10,10)
-output_sig = np.zeros((20))
-
-for val in input_sig:
-    output_sig[val+10] = 1.0 / (1 + math.exp(-val))
-
-
-plt.plot(output_sig)
-plt.plot(input_sig * 0.1) # scaling the input just so we can compare
-plt.show()
-
-```
-## Cue long discussion about how real neural nets work.
-- SO - if you take the node we made
-- And create a row of them
-- And then create another row of them
-- And then connect every node in the first row
-- to every node in the second row
-- Then update the values in each node
-- based on all the derivatives - the gradient
-- And squish the output with a sigmoid function
-- Then you have a two layer network!
-
-# Part three - what is tensorflow?
-
-## Tensorflow
-- Machine Learning framework
-- Created by Google
-- Used to design, build and train deep
-- learning models
-
----
-## Tensorflow
-- Tensorflow is a Python library
-- Optimised for Linear algebra
-- Computes numerical computations via data flow graphs
----
-## Tensorflow
-- Data flow graphs are useful for Machine Learning
-- Because we tend to think about large numerical computations in specific ways
-- e.g. data flowing through mathematical operations
-- edges -> nodes
-
----
-
-## What is a tensor?
-- A good way of thinking about a tensors is to think about a video files
-- A video is a series of frames
-- Each frame contains individual colour values
-- A collection of frames can be thought of as a tensor
-
----
-
-- Each individual colour value can be thought of as a scalar
-- A group of colour values can be thought of as a vector
-- For example, RGBA colour values make up a 4D vector (xyzw)
-- A block of vectors can be thought of as a tensor
-
----
-
-- The 'RANK' of a tensor can be thought of as how many blocks of vectors it has
-- This is similar to numpy, where the number of dimensions is thought of as the 'rank'
-- But to be perfectly honest the definition isn't that clear cut.
-- For example, you can describe a scalar as a tensor with a rank of zero.
-
----
-- It's far simpler to think of it like this:
-- Tensors are data
-- They can also be list of numbers - e.g. vectors, of any dimensionality (rank)
-- They can also be blocks of multidimensional data, such as a bank of images, or a video.
-- They can also be a scaler - e.g. a single value
-- This can be confusing. But it's really not that complicated.
----
-
-- So tensorflow essentially allows you to construct large arrays of numerical data
-- It also allows you to process this data in large blocks
-- It can do this using the CPU, the GPU, or even a TPU (tensor processing unit)
-- But basically it's just a big bunch of multiplications and additions.
-
----
-## Things to remember
-- vectors have lots of properties that carry over to large numbers of dimensions
-- Therefore, so do tensors
-- You can normalise tensors (i.e. turn them in to a direction vector)
-- You can get some idea how similar two tensors are by calculating the dot product
-- You can also get the difference and distance between two tensors using euclidean distance (pythagoras)
-- Or cosine distance
----
-- We went through all these processes in 3 dimensions
-- They are exactly the same in any number of dimensions.
-- Tensorflow attempts to make it easier to do these kinds of operations quickly
-
----
-
-# Part Four
-## Exercise: Getting datasets, processing images and introducing tensorflow
-- Before we start building networks in Tensorflow and exploring what they can do
-- We should probably try and do something simple
-- Like just processing some images
-- Use your study time next week to complete the following exercise
-- As part of week 6, which is a self-study week, you must study the following notebook.
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-6-Exercise-intro-to-image-data-and-tensorflow.ipynb
-- Following this, you must make a version of the notebook with at least one major difference that you have introduced yourself. First, you must do some transformation on the image dataset that isn't included in the above document. If you manage to do this, your next task is to collect and process your own dataset instead of the one provided. 
-
-## Useful resources:
-https://easy-tensorflow.com/
-https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c75777377b
