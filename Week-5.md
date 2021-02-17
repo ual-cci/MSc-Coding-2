@@ -2,17 +2,14 @@
 
 ## 2020-21
 
-# Session 5:
-
-## Part 1 - Introduction to Creative Machine Learning
-
-## Introduction to fundamental machine learning concepts with RapidLib
+# Session 5: Introduction to fundamental machine learning concepts with RapidLib
 
 ---
 
-Follow the Lecture, then go through the exercises in class.
 
-## Lecture:
+## Part one: Lecture
+
+Follow the Lecture, then go through the exercises in class.
 
 Grab the PDF presentation here:
 
@@ -22,6 +19,9 @@ Start here:
 
 * https://mimicproject.com/code/8de3cbbe-b7c6-d79f-65fa-42fd1aa43a26
 
+## Part Two : Exercises
+
+Do these exercises individually or in groups, and share your outcomes and observations with each other. 
 
 ## Exercise 1
 
