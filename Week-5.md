@@ -13,7 +13,7 @@ Follow the Lecture, then go through the exercises in class.
 
 Grab the PDF presentation here:
 
-- https://github.com/micknoise/Advanced-Creative-Coding-1/blob/master/Session-9.pdf
+- https://github.com/ual-cci/MSc-Coding-1/blob/master/Session-9.pdf
 
 Start here:
 
