@@ -1,7 +1,93 @@
 
 # Week 6
 
-## Part 1
+# Part One - what is tensorflow?
+
+## Tensorflow
+- Machine Learning framework
+- Created by Google
+- Used to design, build and train deep
+- learning models
+
+---
+## Tensorflow
+- Tensorflow is a Python library
+- Optimised for Linear algebra
+- Computes numerical computations via data flow graphs
+---
+## Tensorflow
+- Data flow graphs are useful for Machine Learning
+- Because we tend to think about large numerical computations in specific ways
+- e.g. data flowing through mathematical operations
+- edges -> nodes
+
+---
+
+## What is a tensor?
+- A good way of thinking about a tensors is to think about a video files
+- A video is a series of frames
+- Each frame contains individual colour values
+- A collection of frames can be thought of as a tensor
+
+---
+
+- Each individual colour value can be thought of as a scalar
+- A group of colour values can be thought of as a vector
+- For example, RGBA colour values make up a 4D vector (xyzw)
+- A block of vectors can be thought of as a tensor
+
+---
+
+- The 'RANK' of a tensor can be thought of as how many blocks of vectors it has
+- This is similar to numpy, where the number of dimensions is thought of as the 'rank'
+- But to be perfectly honest the definition isn't that clear cut.
+- For example, you can describe a scalar as a tensor with a rank of zero.
+
+---
+- It's far simpler to think of it like this:
+- Tensors are data
+- They can also be list of numbers - e.g. vectors, of any dimensionality (rank)
+- They can also be blocks of multidimensional data, such as a bank of images, or a video.
+- They can also be a scaler - e.g. a single value
+- This can be confusing. But it's really not that complicated.
+---
+
+- So tensorflow essentially allows you to construct large arrays of numerical data
+- It also allows you to process this data in large blocks
+- It can do this using the CPU, the GPU, or even a TPU (tensor processing unit)
+- But basically it's just a big bunch of multiplications and additions.
+
+---
+## Things to remember
+- vectors have lots of properties that carry over to large numbers of dimensions
+- Therefore, so do tensors
+- You can normalise tensors (i.e. turn them in to a direction vector)
+- You can get some idea how similar two tensors are by calculating the dot product
+- You can also get the difference and distance between two tensors using euclidean distance (pythagoras)
+- Or cosine distance
+---
+- We went through all these processes in 3 dimensions
+- They are exactly the same in any number of dimensions.
+- Tensorflow attempts to make it easier to do these kinds of operations quickly
+
+---
+
+# Part two : Workshop!
+
+## Exercise: Getting datasets, processing images and introducing tensorflow
+- Before we start building networks in Tensorflow and exploring what they can do
+- We should probably try and do something simple
+- Like just processing some images
+- As an exercise, we are going to study the following notebook in groups.
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-6-Exercise-intro-to-image-data-and-tensorflow.ipynb
+- Following this, you must make a version of the notebook with at least one major difference that you have introduced yourself. First, you must do some transformation on the image dataset that isn't included in the above document. If you manage to do this, your next task is to collect and process your own dataset instead of the one provided. 
+
+## Useful resources:
+https://easy-tensorflow.com/
+
+https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c75777377b
+
+# Part three : Lecture! 
 
 ## Programming Neural Nets by hand
 - This next tutorial is based on Andrey Karparthy's NN tutorial.
@@ -316,89 +402,3 @@ plt.show()
 - based on all the derivatives - the gradient
 - And squish the output with a sigmoid function
 - Then you have a two layer network!
-
-# Part Two - what is tensorflow?
-
-## Tensorflow
-- Machine Learning framework
-- Created by Google
-- Used to design, build and train deep
-- learning models
-
----
-## Tensorflow
-- Tensorflow is a Python library
-- Optimised for Linear algebra
-- Computes numerical computations via data flow graphs
----
-## Tensorflow
-- Data flow graphs are useful for Machine Learning
-- Because we tend to think about large numerical computations in specific ways
-- e.g. data flowing through mathematical operations
-- edges -> nodes
-
----
-
-## What is a tensor?
-- A good way of thinking about a tensors is to think about a video files
-- A video is a series of frames
-- Each frame contains individual colour values
-- A collection of frames can be thought of as a tensor
-
----
-
-- Each individual colour value can be thought of as a scalar
-- A group of colour values can be thought of as a vector
-- For example, RGBA colour values make up a 4D vector (xyzw)
-- A block of vectors can be thought of as a tensor
-
----
-
-- The 'RANK' of a tensor can be thought of as how many blocks of vectors it has
-- This is similar to numpy, where the number of dimensions is thought of as the 'rank'
-- But to be perfectly honest the definition isn't that clear cut.
-- For example, you can describe a scalar as a tensor with a rank of zero.
-
----
-- It's far simpler to think of it like this:
-- Tensors are data
-- They can also be list of numbers - e.g. vectors, of any dimensionality (rank)
-- They can also be blocks of multidimensional data, such as a bank of images, or a video.
-- They can also be a scaler - e.g. a single value
-- This can be confusing. But it's really not that complicated.
----
-
-- So tensorflow essentially allows you to construct large arrays of numerical data
-- It also allows you to process this data in large blocks
-- It can do this using the CPU, the GPU, or even a TPU (tensor processing unit)
-- But basically it's just a big bunch of multiplications and additions.
-
----
-## Things to remember
-- vectors have lots of properties that carry over to large numbers of dimensions
-- Therefore, so do tensors
-- You can normalise tensors (i.e. turn them in to a direction vector)
-- You can get some idea how similar two tensors are by calculating the dot product
-- You can also get the difference and distance between two tensors using euclidean distance (pythagoras)
-- Or cosine distance
----
-- We went through all these processes in 3 dimensions
-- They are exactly the same in any number of dimensions.
-- Tensorflow attempts to make it easier to do these kinds of operations quickly
-
----
-
-# Homework
-## Exercise: Getting datasets, processing images and introducing tensorflow
-- Before we start building networks in Tensorflow and exploring what they can do
-- We should probably try and do something simple
-- Like just processing some images
-- Use your study time next week to complete the following exercise
-- As part of week 6, which is a self-study week, you must study the following notebook.
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-6-Exercise-intro-to-image-data-and-tensorflow.ipynb
-- Following this, you must make a version of the notebook with at least one major difference that you have introduced yourself. First, you must do some transformation on the image dataset that isn't included in the above document. If you manage to do this, your next task is to collect and process your own dataset instead of the one provided. 
-
-## Useful resources:
-https://easy-tensorflow.com/
-
-https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c75777377b
