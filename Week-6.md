@@ -1,7 +1,15 @@
 
 # Week 6
 
+## First : RECAP!
+
+- Last week we looked at a range of machine learning concepts and got some practical, hands on experience with basic models.
+- This was a little complicated, but if you are currently thinking that you can more or less explain in verh basic terms what Supervised learning is, what classification is, and what regression is, then you are probably fine.
+- If you are concerned that you don't feel comfortable with these topics, don't worry - just go back to last week's session and step through the lecture which explains these step by step.
+- Try to focus your mind just on those things, as they are a great place to start for you right now.
+
 # Part One - what is tensorflow?
+
 
 ## Tensorflow
 - Machine Learning framework
