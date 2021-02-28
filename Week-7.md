@@ -101,7 +101,7 @@ https://www.youtube.com/watch?v=aircAruvnKk
 
 # https://www.tensorflow.org/tutorials/quickstart/beginner
 
-## Part Two: Fun wih Colab
+## Part Two: Image fun with tensorflow
 
 - You will have noticed that you can run the MNIST training demo on Google's colab platform.
 - Colab can be useful if you are wanting to try things out quickly
@@ -109,13 +109,16 @@ https://www.youtube.com/watch?v=aircAruvnKk
 - But you really should try it out!
 
 # Exercise 2
-- Have a look at the following demos:
-- https://research.google.com/seedbank/seed/neural_style_transfer_with_tfkeras
-- https://research.google.com/seedbank/seed/deepdream
-- Use your own images to create your own style transfer and deep dream outputs.
+Lots of people are very excited about using deep learning to generate images.
+Two popular techniques are style transfer and using generative image models, such as Generative Adversarial Networks (GANs).
+- Have a look at the following demos from Google on Style Transfer and GANs. You will be learning more about these next term so these are just to whet your appetite:
+- You will need to install tensorflow hub to use these demos. From the terminal:
+```pip install tensorflow_hub```
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf2_arbitrary_image_stylization.ipynb
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf_hub_generative_image_module.ipynb
+- Use your own images to create your own style transfer and GAN outputs if you can.
 - Check out some of the other examples:
-https://colab.research.google.com/notebooks/intro.ipynb#scrollTo=P-H6Lw1vyNNd
-- If you are feeling like a challenge, get the code running on your own machine.
+https://www.tensorflow.org/hub/tutorials
 
 # Exercise 3
 - Now that we've looked in detail at the whole process
