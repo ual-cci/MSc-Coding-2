@@ -124,6 +124,6 @@ https://www.tensorflow.org/hub/tutorials
 - Now that we've looked in detail at the whole process
 - You should be able to tackle this notebook from Parag Mital. It shows you how to design a Neural Network to generate a new image from scratch based on a separate image. It also reinforces some of the learning we've been through and adds further detail.
 
-https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-CADL-Lecture2.ipynb
+https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-CADL-Lecture2.ipynb
 
 - 
