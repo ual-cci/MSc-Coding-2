@@ -120,8 +120,10 @@ Two popular techniques are style transfer and using generative image models, suc
 - Check out some of the other examples:
 https://www.tensorflow.org/hub/tutorials
 
-# Exercise 3
+# Homework
 - Now that we've looked in detail at the whole process
 - You should be able to tackle this notebook from Parag Mital. It shows you how to design a Neural Network to generate a new image from scratch based on a separate image. It also reinforces some of the learning we've been through and adds further detail.
 
 https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-CADL-Lecture2.ipynb
+
+- 
