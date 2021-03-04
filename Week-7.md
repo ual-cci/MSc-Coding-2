@@ -94,7 +94,7 @@ https://www.youtube.com/watch?v=aircAruvnKk
 
 - Run the tensorflow MNIST demo that I've prepared for you.
 
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-MNIST.ipynb
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-MNIST.ipynb
 
 
 - Read more about it here:
