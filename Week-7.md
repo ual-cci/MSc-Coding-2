@@ -35,18 +35,65 @@ Last session we focussed on trying to understand what a simple machine learning 
 - Second, we are going to look at a few interesting Creative uses of these types of systems
 - Finally, we're going to learn more by exploring a Jupyter notebook from Parag Mital's Creative Applications of Deep Learning course, which allows us to build simple networks for the first time.
 
-# BUT FIRST - Homework
+# Part One
 
-- I asked you to go through the 
+## BUT FIRST - let's review the work from last week's session.
 
+- I asked you to go through this introductory notebook that shows you how to do basic signal processing on a batch of images.
+- I then asked you to try to do some type of transformation on the image dataset (something you devised yourself).
+- I then asked you to modify the notebook so that you ran the process on a totally different batch of images that you sourced yourself.
+- Getting a dataset is one of the most important, and also simultaneously most annoying aspects of machine learning.
 
-## Part One - Using deep learning to classify images.
+# Part Two - Using deep learning to classify images.
 
-- Take a look at this demo here from Terence Broad:
+- Take another look at this demo here from Terence Broad:
 - https://blog.terencebroad.com/archive/convnetvis/vis.html
 - This is a simple visualisation of a real CNN classifying a handwritten image
 - The input image flows through layers of a trained network
 - The 'paths' through the different layers show how different aspects of the image are classified by different layers by the network.
+- Let's actually explore a simple program that actually trains this system.
+
+# Exercise 1
+
+- Run the tensorflow MNIST demo that I've prepared for you.
+
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-MNIST.ipynb
+
+- Read more about it here:
+
+- https://www.tensorflow.org/tutorials/quickstart/beginner
+
+- Work in groups to understand what the final comman is doing. What is it telling us and why?
+
+```
+probability_model(x_test[:5])
+
+```
+
+## Exercise 2 : Image Fun with tensorflow
+
+- You will have noticed that you can run the MNIST training demo on Google's colab platform.
+
+This is useful if you can't get notebooks to work, or are having issues using tensorflow.
+
+https://colab.research.google.com/notebooks/intro.ipynb
+
+- Colab can be useful if you are wanting to try things out quickly
+- However, it's not necessarily very good if you are trying to do complex things that require long periods of training
+- But you really should try it out!
+
+Lots of people are very excited about using deep learning to generate images.
+Two popular techniques are style transfer and using generative image models, such as Generative Adversarial Networks (GANs).
+- Have a look at the following demos from Google on Style Transfer and GANs. You will be learning more about these next term so these are just to whet your appetite:
+- You will need to install tensorflow hub to use these demos. From the terminal:
+```pip install tensorflow_hub```
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf2_arbitrary_image_stylization.ipynb
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf_hub_generative_image_module.ipynb
+- Use your own images to create your own style transfer and GAN outputs if you can.
+- Check out some of the other examples:
+https://www.tensorflow.org/hub/tutorials
+
+# Part Three : Lecture 
 
 ## How neural networks are structured:
 
@@ -96,36 +143,6 @@ Last session we focussed on trying to understand what a simple machine learning 
 - Here is a surprisingly good explanation that is pretty easy to grasp:
 
 https://www.youtube.com/watch?v=aircAruvnKk
-
-# Exercise 1
-
-- Run the tensorflow MNIST demo that I've prepared for you.
-
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-MNIST.ipynb
-
-
-- Read more about it here:
-
-# https://www.tensorflow.org/tutorials/quickstart/beginner
-
-## Part Two: Image fun with tensorflow
-
-- You will have noticed that you can run the MNIST training demo on Google's colab platform.
-- Colab can be useful if you are wanting to try things out quickly
-- However, it's not necessarily very good if you are trying to do complex things that require long periods of training
-- But you really should try it out!
-
-# Exercise 2
-Lots of people are very excited about using deep learning to generate images.
-Two popular techniques are style transfer and using generative image models, such as Generative Adversarial Networks (GANs).
-- Have a look at the following demos from Google on Style Transfer and GANs. You will be learning more about these next term so these are just to whet your appetite:
-- You will need to install tensorflow hub to use these demos. From the terminal:
-```pip install tensorflow_hub```
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf2_arbitrary_image_stylization.ipynb
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf_hub_generative_image_module.ipynb
-- Use your own images to create your own style transfer and GAN outputs if you can.
-- Check out some of the other examples:
-https://www.tensorflow.org/hub/tutorials
 
 # Homework
 - Now that we've looked in detail at the whole process
