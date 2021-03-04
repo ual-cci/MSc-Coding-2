@@ -16,6 +16,9 @@ Last session we focussed on trying to understand what a simple machine learning 
 
 - This works with single input systems, but is even more powerful if we can have more inputs, so we chain them together
 - We do all this by adjusting the inputs by a small amount, and getting the derivative, which is the difference between input and output for different parameters of the system, scaled by a small amount (we move slowly towards the target..)
+
+![Gradient Descent](https://upload.wikimedia.org/wikipedia/commons/a/a3/Gradient_descent.gif)
+
 - When we get all the derivatives together, we get a gradient. This can be thought of as containing direction.
 
 - We use the gradient to adjust the parameters of the network. The difference propagates back through the network.
@@ -31,6 +34,10 @@ Last session we focussed on trying to understand what a simple machine learning 
 - First, we are going to look at how large ensembles of neurons can classify an image, and how we can structure such systems
 - Second, we are going to look at a few interesting Creative uses of these types of systems
 - Finally, we're going to learn more by exploring a Jupyter notebook from Parag Mital's Creative Applications of Deep Learning course, which allows us to build simple networks for the first time.
+
+# BUT FIRST - Homework
+
+- I asked you to go through the 
 
 
 ## Part One - Using deep learning to classify images.
