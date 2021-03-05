@@ -55,20 +55,11 @@ Last session we focussed on trying to understand what a simple machine learning 
 
 # Exercise 1
 
-- Run the tensorflow MNIST demo that I've prepared for you.
+In groups we're going to do an exercise looking at this MNIST notebook here:
 
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-MNIST.ipynb
+https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-MNIST.ipynb
 
-- Read more about it here:
-
-- https://www.tensorflow.org/tutorials/quickstart/beginner
-
-- Work in groups to understand what the final comman is doing. What is it telling us and why?
-
-```
-probability_model(x_test[:5])
-
-```
+Try to understand what each line is doing with reference to what we described in the lecture. Remember, this is creating a large network layer by layer.
 
 ## Exercise 2 : Image Fun with tensorflow
 
