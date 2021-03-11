@@ -139,27 +139,59 @@ https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-power
 - However, you can power devices from the PI, including Arduino, because the PI has 5v outputs. You can also draw about 1.5 amps from it. That's a lot...
 - https://pinout.xyz
 
-# Let's set up our PIs !
+# Demonstration session
 
-## Exercise 1
-Get your PI set up and play with it for a little while
-Try to Download and install openframeworks on the PI (hint - nightly builds work well)
-Build a simple sound or graphics application
-Be aware, the PI doesn't have an audio / mic input, or a webcam attached. You would need to add those.
+## Different PI models
 
-Some things to consider:
+- Let's look at a few different Raspberry PI devices: https://en.wikipedia.org/wiki/Raspberry_Pi
+- In detail, we're going to look at the PI A+, the PI Zero, and the PI 4
+- These all have different hardware, speed, memory limits etc.
+- They also have very different potential uses
+- We're going to examine some of the ways they differ
+- Finally let's look at the GPIO. You can emulate the PI GPIO here: https://create.withcode.uk/python/A3
 
-- Do you have any linux experience at all?
-- If not, here's some help to get you in to using the console:
+## Power Consumption
+- These devices are quite efficient, which makes them highly usable for IoT and hardware projects
+- There's a useful article here on power consumption https://raspi.tv/2015/raspberry-pi-zero-power-measurements
+- As you can see, the PI Zero is very efficient
+- This means you can run them from battery packs if those packs can provide enough amps.
+
+## Setting up the PI
+- I'm going to talk you through how to set up the PI
+- We're going to discuss SD cards, OS download and configuration
+- We'll also look at customisation, SSH, communications protocols, memory and overclocking functions
+- Finally we'll discuss headless operation, boot sector corruption and how to avoid it, overlay filesystems and why they are useful etc.
+
+## Using Linux
+- First steps in Linux - using the terminal
+- navigating, changing directory, listing directories
+- running applications and scripts from the terminal, 
+- Here's some help to get you in to using the console:
 https://missing.csail.mit.edu/2020/course-shell/
 - And a terminal cheat sheet:
 https://linoxide.com/guide/linux-cheat-sheet.png
-Some questions:
-- Which version of OF should I grab?
-- What version of GL does the PI use?
-- What kind of shaders can you use on on the PI?
 
-## Exercise 2
+## Downloading Openframeworks
+- Using openframeworks on the PI is very simple
+- You are going to love it
+- We're going to download, configure and run openframeworks
+- If you are interested in making a synthesiser, lots of people have done this with a raspi, but you probably want to buy a hardware audio shield.
+- Also, raspberry pi is a platform used by artists all the time due to its price point.
+
+If you are interested in using a raspberry pi, you can either borrow a raspberry pi 4 from CCI, or purchase your own.
+Usually in this session we would work together to download and install openframeworks on our PI (hint - nightly builds work well)
+Then we would build a simple sound or graphics application and start to think about what else we might do.
+This time, we're going to go through the process of setting up a pi together, and talk through common problems
+I'm also going to get some basic applications running and make sure you've got a good idea how to do that.
+
+## Borrowing a Raspberry PI 4
+We have lots of Raspberry PI 4 devices at CCI. Talk to the technical services team if you are interested in using one.
+If you need help setting it up, you can refer to this video, or see any of the huge number of resources available.
+
+## Exercise
 - Consider how you might restructure and refactor your Arduino projects to work on the PI
+- Work in groups to share ideas about what advantages this might bring e.g. sound and graphics, machine learning, faster on-unit processing
 - What other kinds of projects might you be able to create that were previously out of reach?
-- Plan some small project with the PI to test out your skill
+- In groups discuss and plan some small project with the PI.
+
+
