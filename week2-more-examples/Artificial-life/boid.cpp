@@ -19,11 +19,11 @@ Boid::Boid()
 	separationThreshold = 15;
 	neighbourhoodSize = 100;
 	
-	position = ofxVec3f(ofRandom(0, 200), ofRandom(0, 200));
-	velocity = ofxVec3f(ofRandom(-2, 2), ofRandom(-2, 2));
+	position = ofVec3f(ofRandom(0, 200), ofRandom(0, 200));
+	velocity = ofVec3f(ofRandom(-2, 2), ofRandom(-2, 2));
 }
 
-Boid::Boid(ofxVec3f &pos, ofxVec3f &vel)
+Boid::Boid(ofVec3f &pos, ofVec3f &vel)
 {
 	separationWeight = 1.0f;
 	cohesionWeight = 0.2f;
@@ -93,17 +93,17 @@ void Boid::setNeighbourhoodSize(float f)
 }
 
 
-ofxVec3f Boid::getPosition()
+ofVec3f Boid::getPosition()
 {
 	return position;
 }
 
-ofxVec3f Boid::getVelocity()
+ofVec3f Boid::getVelocity()
 {
 	return velocity;
 }
 
-ofxVec3f Boid::separation(std::vector<Boid *> &otherBoids)
+ofVec3f Boid::separation(std::vector<Boid *> &otherBoids)
 {
 	// finds the first collision and avoids that
 	// should probably find the nearest one
@@ -112,16 +112,16 @@ ofxVec3f Boid::separation(std::vector<Boid *> &otherBoids)
 	{	
 		if(position.distance(otherBoids[i]->getPosition()) < separationThreshold)
 		{
-			ofxVec3f v = position -  otherBoids[i]->getPosition();
+			ofVec3f v = position -  otherBoids[i]->getPosition();
 			v.normalize();
 			return v;
 		}
 	}
 }
 
-ofxVec3f Boid::cohesion(std::vector<Boid *> &otherBoids)
+ofVec3f Boid::cohesion(std::vector<Boid *> &otherBoids)
 {
-	ofxVec3f average(0,0,0);
+	ofVec3f average(0,0,0);
 	int count = 0;
 	for (int i = 0; i < otherBoids.size(); i++)
 	{
@@ -132,14 +132,14 @@ ofxVec3f Boid::cohesion(std::vector<Boid *> &otherBoids)
 		}
 	}
 	average /= count;
-	ofxVec3f v =  average - position;
+	ofVec3f v =  average - position;
 	v.normalize();
 	return v;
 }
 
-ofxVec3f Boid::alignment(std::vector<Boid *> &otherBoids)
+ofVec3f Boid::alignment(std::vector<Boid *> &otherBoids)
 {
-	ofxVec3f average(0,0,0);
+	ofVec3f average(0,0,0);
 	int count = 0;
 	for (int i = 0; i < otherBoids.size(); i++)
 	{
@@ -150,12 +150,12 @@ ofxVec3f Boid::alignment(std::vector<Boid *> &otherBoids)
 		}
 	}
 	average /= count;
-	ofxVec3f v =  average - velocity;
+	ofVec3f v =  average - velocity;
 	v.normalize();
 	return v;
 }
 
-void Boid::update(std::vector<Boid *> &otherBoids, ofxVec3f &min, ofxVec3f &max)
+void Boid::update(std::vector<Boid *> &otherBoids, ofVec3f &min, ofVec3f &max)
 {
 	velocity += separationWeight*separation(otherBoids);
 	velocity += cohesionWeight*cohesion(otherBoids);
@@ -165,7 +165,7 @@ void Boid::update(std::vector<Boid *> &otherBoids, ofxVec3f &min, ofxVec3f &max)
 	position += velocity;
 }
 
-void Boid::walls(ofxVec3f &min, ofxVec3f &max)
+void Boid::walls(ofVec3f &min, ofVec3f &max)
 {
 	if (position.x < min.x){
 		position.x = min.x;

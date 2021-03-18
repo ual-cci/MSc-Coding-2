@@ -3,8 +3,6 @@
 
 
 #include "ofMain.h"
-#include "ofxVectorMath.h"
-
 #include <vector>
 #include "boid.h"
 
@@ -24,14 +22,9 @@ public:
     void mousePressed(int x, int y, int button);
     void mouseReleased(int x, int y, int button);
     void windowResized(int w, int h);
-    
-    ofTrueTypeFont 	vagRounded;
-    
-    bool  	bFullscreen;
-    
+
     std::vector<Boid *> boids;
 	
-    int framecounter, updatecounter;
 };
 
 #endif	
