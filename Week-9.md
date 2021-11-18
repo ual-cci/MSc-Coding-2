@@ -52,44 +52,6 @@ Let's think about some theoretical examples and consider what frameworks we shou
 - Submit them in CODE format with an associated README file (one README per exercise), and any associated output image files. You can submit .cpp + .hpp files, iPython notebooks, any other code in text form, and example PNG/JPEGS (images in any format).
 
 Here are some ideas based on the in-class exercises and homeworks you were asked to complete. Of course, you should have spent some of your own time on these after each class, and so hopefully it won't take you too long to put the submission together. Also, it's fine if you worked with other people on these but just remember to make sure you are clear about what it is you did.
-
-## Week 2 - Your first OF project
-
-- Select a JavaScript project you completed last term and port it to C++ using openFrameworks
-
-## Week 3 - The Python Challenge!
-
-- http://www.pythonchallenge.com
-
-- Submit your python challenge solutions to the first 7 challenges
-
-## Week 4 - Python webscraper
-
-- Build a simple webscraper that scrapes a set of documents from the internet and summarises them using gensim.
-- If you manage to achieve this, extract keywords from all the different documents and see if any are more popular than others.
-- Search for documents that contain those keywords using Python and then summarise those documents too.
-
-## Week 5 - Homework: Using Numpy to compute images
-
-- In week 5 we looked through rapidlib and then had a homework exercise focussed on creating images using Numpy
-- If you managed to do this, you may submit this as one of your in-class assignments.
-
-## Week 6 - Signal Processing in Numpy and Tensorflow
-
-- NOTEBOOK: https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-6-Exercise-intro-to-image-data-and-tensorflow.ipynb
-- Make a version of the Notebook with at least one major difference that you have introduced yourself (as follows):
-- First, you must do some transformation on the image dataset that isn't included in the above document. You must use numpy to do this transformation.
-- If you manage to do this, your next task is to collect and process your own dataset instead of the one provided. Do as much of this as you can and submit.
-
-## Week 7 - Using TensorFlow to create outputs
-
-- Exercise 2
-- Use your own images to create your own style transfer and GAN outputs.
-- Submit your image outputs. If you make any changes to the code, submit your own version of the notebooks, highlighting the changes you made using comments.
-
-## Week 8 
-
- - Submit a port of any of the above exercises that will run on the Raspberry PI 4.
  
  # Lecture
  
@@ -110,9 +72,7 @@ Here are some ideas based on the in-class exercises and homeworks you were asked
 
 - In this example, we create a flock of virtual birds
 - This is an algorithm that is primarily based on the work of Craig Reynolds    
-https://www.youtube.com/watch?v=86iQiV3-3IA
-
-- How does this work?
+https://www.youtube.com/watch?v=86iQiV3-3IA - How does this work?
 
 ## How does this work
 - Each 'boid' is an instance of the same class
