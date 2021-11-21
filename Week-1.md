@@ -78,7 +78,7 @@ You can do everything you need to on the command line using GCC, G++ and MAKE. W
 * The Preprocessor takes all the files in your project and sticks them together in to one big file which it then passes to the compiler
 - You can give the preprocessor some 'directives', i.e. actions, like including other files such as standard libraries for maths, logging, or whatever.
 * The compiler turns your code into binary form, and pulls off lots of tricks on the way.
-- The more time you spend working with C++, the more you will care about these tricks. All you need to know is that this is how you create a program that you can run.
+- The more time you spend working with C++, the more you will care about these tricks. But right now, all you need to know is that this is how you create a program that you can run.
 
 - You can of course use any text editor, and any compiler without using an IDE. It's totally your call. However, it will make life harder for you if you're trying to understand various frameworks, as these will expect you to be using an IDE such as those already mentioned.
 
