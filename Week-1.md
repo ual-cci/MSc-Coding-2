@@ -137,7 +137,7 @@ You also know what these are. We've used them a lot in JavaScript, and these day
 
 - .h (hpp) .cpp pairs
 
-Now like most things in C++, I could talk about this for a long time, but the method I am going to teach you is an approved method for structuring and adding files that contain your own objects in ways that make it very easy for other people to understand and re-use your code. We'll go through this in the lecture, and 
+Now like most things in C++, I could talk about this for a long time, but the method I am going to teach you is a good first method for structuring and adding files that contain your own objects in ways that makes it very easy for other people to understand and re-use your code. We'll go through this in the lecture 
 
 - including and using classes in a project
 
