@@ -46,6 +46,8 @@ The things I'll be introducing you to today are as follows:
 
 There are a couple of options.
 
+### MacOS
+
 - Xcode (Download from the macOS App store)
 
 The current version of Xcode will require you to use the most recent macOS operating system. If you really don't want to update your computer, you can sign up for a free apple developer account and download a version that works on your operating system by exploring the available links here: 
@@ -53,6 +55,8 @@ The current version of Xcode will require you to use the most recent macOS opera
 https://developer.apple.com/download/more/
 
 - MS Visual Studio (Download from the visual studio website here
+
+### Windows
 
 - https://visualstudio.microsoft.com/
 
