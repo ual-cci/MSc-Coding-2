@@ -23,7 +23,7 @@ If you want a nice reference for today's session, you should of course be lookin
 
 https://www.w3schools.com/cpp/default.asp
 
-The things I'll be introducting you today are as follows:
+The things I'll be introducing you to today are as follows:
 
 - preprocessing and compilation
 - main.cpp
