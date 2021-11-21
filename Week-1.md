@@ -73,7 +73,7 @@ You can do everything you need to on the command line using GCC, G++ and MAKE. W
 - Let's talk a little bit about each of these so you're all clear what they can do for you. Some of you will know this stuff, but just in case, let's remind ourselves.
 
 * Linting is where a program can analyse your code and spot where it's going to fail.
-* Hinting is where the idea tells you about errors and offer solutions
+* Hinting is where the IDE tells you about errors and offer solutions
 - You will have noticed these features on mimicproject.com and elsewhere
 * The Preprocessor takes all the files in your project and sticks them together in to one big file which it then passes to the compiler
 - You can give the preprocessor some 'directives', i.e. actions, like including other files such as standard libraries for maths, logging, or whatever.
