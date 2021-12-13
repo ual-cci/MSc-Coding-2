@@ -213,24 +213,23 @@ https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quick
 
 https://radimrehurek.com/gensim/
 
-Gensim is incredibly powerful. It is a general purpose Topic modelling and natural language processing library with cutting edge features, including auto-summarisation, sentiment analysis, word-vectors, and lots of very useful topic modelling toolkits, such as Latent Semantic Analysis (LSA) and Latent Dirichlit Allocation (LDA - https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation).
+Gensim is a general purpose Topic modelling and Natural Language Processing library with sentiment analysis, word-vectors, and lots of very useful topic modelling toolkits, such as Latent Semantic Analysis (LSA) and Latent Dirichlit Allocation (LDA - https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation).
 
-For example, if you want to summarise a document, it's a single line of code.
+It's looking a bit old by modern standards, so you might also want to take a look at the next item in our list!
 
-```python
-from gensim.summarization import summarize
+### Transformers
 
-print (mySummary = summarize(text,word_count=150))
+https://github.com/huggingface/transformers
 
-```
+Hugging Face's Transformers library is an incredible library of contemporary Natural Language Processing tools. For contemporary autosummarisation, text style transfer, and other quite startling NLP demos, check out the website below.
 
-Of all the libraries we've just looked at, Gensim has possibly the most meaningful and fun set of tutorials and examples, available here:
+https://huggingface.co/models
 
-https://radimrehurek.com/gensim/auto_examples/index.html
+
 
 # Exercise
 
-Working in groups, build a simple webscraper that scrapes a set of documents from the internet and summarises them using gensim.
+Working in groups, build a simple webscraper that scrapes a set of documents from the internet and summarises them.
 
 If you manage to achieve this, extract keywords from all the different documents and see if any are more popular than others. Search for documents that contain those keywords using Python and then summarise those documents too!
 
