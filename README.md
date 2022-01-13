@@ -20,7 +20,14 @@ Week 1 & 2 - C++
 - Getting started with openFrameworks
 - Understanding Pointers
 
-Week 3 & 4 - Python
+Week 3 & 4 - More C++ and Embedded development
+- More on pointers
+- Object orientation, inheritence, polymorphism
+- Pointers in objects and how you can use them
+- Using ARM architectures for embedded systems
+- Running OF on ARM
+
+Week 5 & 6 - Python
 
  - Getting started with Python : Python 2 vs 3, printing to the console, import, variables, conditionals, loops, functions, def
  - Doing the Python Challenge!!!
@@ -28,21 +35,10 @@ Week 3 & 4 - Python
  - Core libs : matplotlib, numpy, pandas, urllib, bs4, gensim, bokeh, flask.
  - NLP tools in gensim.   
 
-Week 5 & 6 - Python Machine Learning
+Week 7 & 8 - Python Machine Learning
 - Introduction to Image Processing, Batch processing and Data Handling 
 - Basic Neural Networks by hand - Forward multiply, Forward add, backward pass, calculating derivatives and gradients, numerical gradient, analytic gradient, scaling the gradient to automatically adjust parameters. Back propagation for training Neural Networks.    
 - Introduction to Tensorflow
-
-Week 7 - More Python Machine Learning
-- Neural Networks for image classification
-- Using Tensorflow to do inference on pre-trained models
-- Exploring CNNs, RNNs, GANs.
-
-Week 8 - Embedded development
-- Using ARM architectures - Raspi for prototyping
-- Python and C++ on ARM architectures
-- Designing autonomous embedded systems
-- Using simple sound and light sensors for interaction
 
 Week 9 - Project work
 
