@@ -1,197 +1,144 @@
 # Coding 2 : Advanced Frameworks
 
-# Week 8 : Embedded systems
-## 2020-2021
+# Week 8: Using deep neural networks to classify and generate images
+
+## 2019-2020
 
 Professor Mick Grierson
 
-## Introduction
+## Recap
 
-So far we have looked at a selection of software languages, platforms and frameworks that are useful for a range of Creative Computing tasks that incorporate graphics, sound, interaction, machine learning etc. We've thought about how we go about common tasks using these systems. However, we've not really considered how we might respond to working outside the context of existing hardware - e.g. a desktop, mobile phone/tablet or laptop scenario.
+Last session we focussed on trying to understand what a simple machine learning system was, and how you could build a very simple one. We learned a lot of things. Some of the most important things we went through were as follows:
 
-## The outside world
-Portable devices that can carry out computational tasks in the outside world provide some interesting affordances. Working with small, portable devices opens up many opportunities:
-- Create and install interactive media devices anywhere
-- Use sensors to collect data remotely
-- Build "ambient" computing environments (oh .. wait...what are those?)
-- Design and prototype new mobile devices and platforms
-- Design and prototype new computing hardware for bespoke purposes, e.g. music tech devices, vision mixers, autonomous robots etc.
+- We tend to use Neural Networks to try to transform data without us having to change parameters manually.
+- For example, we might want to build a system that can automatically change input values in order to meet some condition, e.g. making an output value get higher.
+- We can do this by measuring the distance between the output and the desired output, then passing a value derived from this distance back through the network's parameters.
 
-## Modern hardware prototyping
+- This works with single input systems, but is even more powerful if we can have more inputs, so we chain them together
+- We do all this by adjusting the inputs by a small amount, and getting the derivative, which is the difference between input and output for different parameters of the system, scaled by a small amount (we move slowly towards the target..)
 
-Planning to deliver everything over existing hardware infrastructure is totally fine. But it has a number of restrictions
+![Gradient Descent](https://upload.wikimedia.org/wikipedia/commons/a/a3/Gradient_descent.gif)
 
-- Performance will be defined by capabilities of phones and tablets, or someone else's portable computing hardware (e.g. laptop, phone)
-- So will all interaction (so nothing that isn't currently marketed widely e.g. no sliders, knobs, switches, or tactile interfaces)
-- Consequently, limited capacity for interaction research (new forms of interaction)
-- Locked in to an existing hardware and software ecosystem (e.g. app store)
-- Have to abide by existing hardware and software ecosystem agreements
-- Limited potential for trademarking, patents etc.
-- Not much of a hardware business unless you plan to sell accessories for mobile platforms.   
+- When we get all the derivatives together, we get a gradient. This can be thought of as containing direction.
 
-## Why not just use Arduino?
+- We use the gradient to adjust the parameters of the network. The difference propagates back through the network.
+- Input data flows forward through nodes in a graph - this is the forward pass
+- We calculate the gradient and use this to adjust the network parameters - this is the backward pass.
+- We call this "Back Propagation."
+- We can add and squash the output of a bunch of Neurons together with an activation function, such as a sigmoid.
+- We can use this to turn a Neuron into a smoothed-switch with a maximum of 1 and a minimum of 0.
 
-Arduino is a great platform and very flexible. However, there are a number of things that an Arduino isn't very good at and can't do at all:
-- Produce high resolution interactive graphics
-- Produce professional quality sound and interactive sound outputs
-- Process large amounts of data using algorithms
-- Work with machine learning tools
-- Carry out any complex computations / stats
-- Hold anything substantial in memory
+## This session
 
-## Limitations of Arduino-type platforms
-Arduino is a certain type of embedded device platform that is often not very fast or capable. It's fine for simple computations. But:
-- They often use quite a simple CPU - e.g. ARM cortex-M:
-- They have very limited memory (required for doing computation!)
-- They are slow - usually between 16 and 42Mhz.
+- Today we are going to do three things
+- First, we are going to look at how large ensembles of neurons can classify an image, and how we can structure such systems
+- Second, we are going to look at a few interesting Creative uses of these types of systems
+- Finally, we're going to learn more by exploring a Jupyter notebook from Parag Mital's Creative Applications of Deep Learning course, which allows us to build simple networks for the first time.
 
-## ARM architectures for embedded devices
-- Many embedded devices use ARM cortex M class devices
-- You can find a list of these devices here:
-- https://en.wikipedia.org/wiki/ARM_Cortex-M
-- These devices are great for some forms of hardware prototyping
-- But very often, they lack the speed of conventional mobile platforms (although they are still used as part of these types of platforms e.g. for additional processes)
-- They are not that great for contemporary robotics for example.
+# Part One
 
-## So what does your phone run on?
-- Your phone probably runs on a device based on ARM architectures.
-- However, the class of ARM device is probably higher:
-- ARM 9 - https://en.wikipedia.org/wiki/ARM9
-- ARM 11 - https://en.wikipedia.org/wiki/ARM11
-- ARM Cortex A7, A53, A72
-- Almost all phones run something like that, or substantially based on it
-- ARM were a British company until a couple of years ago when they were bought by softbank in Japan.
+## BUT FIRST - let's review the work from last week's session.
 
-## More powerful System on a Chip - SOC
-- More powerful ARM devices can be used to create better System on a Chip devices (SOC)
-- These types of SOC devices are great for hardware prototypying
-- They can provide processing power comparable to your phone
-- They can be easily expanded to provide excellent interface architecture (serial, USB, GPIO, SDI), graphics (including console-level GPU), Ethernet or even WIFI, bluetooth, and other features.
-- Basically it's a computer - like the one in your mobile phone, or even your chromebook or laptop. But it's tiny.
+- I asked you to go through this introductory notebook that shows you how to do basic signal processing on a batch of images.
+- I then asked you to try to do some type of transformation on the image dataset (something you devised yourself).
+- I then asked you to modify the notebook so that you ran the process on a totally different batch of images that you sourced yourself.
+- Getting a dataset is one of the most important, and also simultaneously most annoying aspects of machine learning.
 
-## Advantages of capable SOC devices
-- Low cost of manufacture
-- Low cost for bulk purchase
-- Open hardware options (all specifications published)
-- Designs for SOC devices available license free for adaptation
-- All SOC parts can be replaced and refactored
-- GPIO
+# Part Two - Using deep learning to classify images.
 
-## What this means:
-- SOC devices can do all the things that your phone or even laptop does
-- But you can also wire any electronics to them that you like using GPIO
-- You can also connect custom peripheral hardware using SPI (Serial Peripheral Interface)
-- You can create your own custom SOCs that are identical to prototyping boards that you have used to develop your prototype
-- You can do this at the fraction of the cost and in bulk
-- You can completely customise the system to you needs
-- You can use it to create patentable technology more easily
-- (it's much easier to patent a device than to patent software)
+- Take another look at this demo here from Terence Broad:
+- https://blog.terencebroad.com/archive/convnetvis/vis.html
+- This is a simple visualisation of a real CNN classifying a handwritten image
+- The input image flows through layers of a trained network
+- The 'paths' through the different layers show how different aspects of the image are classified by different layers by the network.
+- Let's actually explore a simple program that actually trains this system.
 
-## Prototyping boards that use ARM-style SOCs
-- There are a great many different types of such platforms
-- Beaglebone, PCDuino, Raspi, Jetson Nano, Chip
-- Some of them have FPGAs on them !
-- https://developer.arm.com/tools-and-software/development-boards/fpga-prototyping-boards
-- Field Programmable Gate Array - https://en.wikipedia.org/wiki/Field-programmable_gate_array
+# Exercise 1
 
-## Raspberry PI
-- Raspberry PI is by far the most popular and widely used SOC-based prototyping platform.
-- Raspberry PI is currently at version 4
-- PI4 is ridiculously powerful for such a cheap, small device:
-- SoC: Broadcom BCM2711B0 quad-core A72 (ARMv8-A) 64-bit @ 1.5GHz
-- GPU: Broadcom VideoCore VI (4k dual output)
-- Networking: 2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN
-- RAM: 1GB, 2GB, or 4GB LPDDR4 SDRAM
-- Bluetooth: Bluetooth 5.0, Bluetooth Low Energy (BLE)
-- GPIO: 40-pin GPIO header, populated
-- Storage: microSD
-- Ports: 2 × micro-HDMI 2.0, 3.5 mm analogue audio-video jack, 2 × USB 2.0, 2 × USB 3.0, Gigabit Ethernet, Camera Serial Interface (CSI), Display Serial Interface (DSI)
-- Dimensions: 88 mm × 58 mm × 19.5 mm, 46 g
+In groups we're going to do an exercise looking at this MNIST notebook here:
 
-This is more powerful than many laptops.
+https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-MNIST.ipynb
 
-- (roughly) twice the CPU and RAM spec of the original Macbook air.
+Try to understand what each line is doing with reference to what we described in the lecture. Remember, this is creating a large network layer by layer.
 
-- Also has all the connectivity you would need to create a pretty smart robot.
+## Exercise 2 : Image Fun with tensorflow
 
-## OS choice
-- You can run whatever OS you like on your SOC as long as it has an kernel that suits the instruction set of your architecture
-- Raspberry PI uses ARM architecture and there's an OS developed to support it.
-- RASPBIAN is based on Debian linux, and is one of the most reliable operating systems available.
-- Why is that?
-- It's also totally free
+- You will have noticed that you can run the MNIST training demo on Google's colab platform.
 
-## What can it do?
-- You can run node, openframeworks, Python 2 or 3 and even Tensorflow, including (with lots of fiddling) a GPU-enabled TF installation.
-- You can set them to read-only mode so that they don't b0rk after you've deployed them
-- You can strip them down so that they boot in seconds and run whatever software you want without intervention
-- You can do all the things you might do with an Arduino in terms of connectivity BUT, there are some important differences   
+This is useful if you can't get notebooks to work, or are having issues using tensorflow.
 
-## GPIO and power
-- GPIO on Raspberry PI isn't the same as Arduino
-- Also, it uses a bit more power
-- But these differences don't stop you doing the same things - you just need to be aware of them.
-- Power consumption on the PI is not always as good as Arduino, depending on what version you use. For example, the PI Zero uses so little power I can barely remember the number because it's so small.
-https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-power
-- You can power the PI from LIPO batteries. Check the milliAmp Hour of the battery (mAh). An phone-charging battery that pumps out 3A and is 10000 mAh can power the PI for hours.
-- But, when connecting devices to and from the PI you need to consider its voltage limitations:
-- PI GPIO inputs are at 3.5v, whereas Arduino outputs 5v, so you will need to use a voltage divider to connect them that way.
-- However, you can power devices from the PI, including Arduino, because the PI has 5v outputs. You can also draw about 1.5 amps from it. That's a lot...
-- https://pinout.xyz
+https://colab.research.google.com/notebooks/intro.ipynb
 
-# Demonstration session
+- Colab can be useful if you are wanting to try things out quickly
+- However, it's not necessarily very good if you are trying to do complex things that require long periods of training
+- But you really should try it out!
 
-## Different PI models
+Lots of people are very excited about using deep learning to generate images.
+Two popular techniques are style transfer and using generative image models, such as Generative Adversarial Networks (GANs).
+- Have a look at the following demos from Google on Style Transfer and GANs. You will be learning more about these next term so these are just to whet your appetite:
+- You will need to install tensorflow hub to use these demos. From the terminal:
+```pip install tensorflow_hub```
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf2_arbitrary_image_stylization.ipynb
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf_hub_generative_image_module.ipynb
+- Use your own images to create your own style transfer and GAN outputs if you can.
+- Check out some of the other examples:
+https://www.tensorflow.org/hub/tutorials
 
-- Let's look at a few different Raspberry PI devices: https://en.wikipedia.org/wiki/Raspberry_Pi
-- In detail, we're going to look at the PI A+, the PI Zero, and the PI 4
-- These all have different hardware, speed, memory limits etc.
-- They also have very different potential uses
-- We're going to examine some of the ways they differ
-- Finally let's look at the GPIO. You can emulate the PI GPIO here: https://create.withcode.uk/python/A3
+# Part Three : Lecture 
 
-## Power Consumption
-- These devices are quite efficient, which makes them highly usable for IoT and hardware projects
-- There's a useful article here on power consumption https://raspi.tv/2015/raspberry-pi-zero-power-measurements
-- As you can see, the PI Zero is very efficient
-- This means you can run them from battery packs if those packs can provide enough amps.
+## How neural networks are structured:
 
-## Setting up the PI
-- I'm going to talk you through how to set up the PI
-- We're going to discuss SD cards, OS download and configuration
-- We'll also look at customisation, SSH, communications protocols, memory and overclocking functions
-- Finally we'll discuss headless operation, boot sector corruption and how to avoid it, overlay filesystems and why they are useful etc.
+- Different NN systems have different structures
+- There are many different features these structures
+- One good example of such a system is a what is called
+- a "Fully connected network"
 
-## Using Linux
-- First steps in Linux - using the terminal
-- navigating, changing directory, listing directories
-- running applications and scripts from the terminal, 
-- Here's some help to get you in to using the console:
-https://missing.csail.mit.edu/2020/course-shell/
-- And a terminal cheat sheet:
-https://linoxide.com/guide/linux-cheat-sheet.png
+## Fully Connected networks
+- It's super easy to understand a fully connected network
+- All this means is that every node in one layer is connected to every node in the next layer
+- This makes a massive web of connections
 
-## Downloading Openframeworks
-- Using openframeworks on the PI is very simple
-- You are going to love it
-- We're going to download, configure and run openframeworks
-- If you are interested in making a synthesiser, lots of people have done this with a raspi, but you probably want to buy a hardware audio shield.
-- Also, raspberry pi is a platform used by artists all the time due to its price point.
+## What are the layers doing?
+- We start with a bunch of inputs at the first layer, one for each pixel, for example.
+- We might want to downsample the image first, and convert it to greyscale. We don't need colour to work out what number it is.
+- Then we want to have a bunch of outputs. In the example of the MNIST handwritten digit classification, there are 10 outputs for 10 numbers (0-9).
+- Then, we have what are called 'hidden layers' in-between.
+- They are 'hidden' because we don't monitor their inputs or outputs directly in normal circumstances.
 
-If you are interested in using a raspberry pi, you can either borrow a raspberry pi 4 from CCI, or purchase your own.
-Usually in this session we would work together to download and install openframeworks on our PI (hint - nightly builds work well)
-Then we would build a simple sound or graphics application and start to think about what else we might do.
-This time, we're going to go through the process of setting up a pi together, and talk through common problems
-I'm also going to get some basic applications running and make sure you've got a good idea how to do that.
+## Seriously, what do the layers do?
 
-## Borrowing a Raspberry PI 4
-We have lots of Raspberry PI 4 devices at CCI. Talk to the technical services team if you are interested in using one.
-If you need help setting it up, you can refer to this video, or see any of the huge number of resources available.
+- The input layers and hidden layers divide up the task of working out what the image representation needs to be.
+- They do this literally by adding up the values from different parts of the image.
+- This is one reason why the dataset is normalised in terms of size and orientation.
+- However this isn't always necessary. Just mostly necessary!
 
-## Exercise
-- Consider how you might restructure and refactor your Arduino projects to work on the PI
-- Work in groups to share ideas about what advantages this might bring e.g. sound and graphics, machine learning, faster on-unit processing
-- What other kinds of projects might you be able to create that were previously out of reach?
-- In groups discuss and plan some small project with the PI.
+## No but really...
+- First layers might work out some of the edges
+- The hidden layers then spread out the job of representing different aspects of the image input. These are basically different blocks of pixels - just like in Terence's demo.
+- This leads to the output layer receiving a collection of activiations which it can use to determine what the input image is.
 
+## Weights, Biases, Activation
+- A trained network is really just a really big grid of weights (values).
+- These weights have been arrived at through the training process, and just tell you what the values of the pixels are for a particular part of the image
+- The training process simply compares the outputs to the input, works out the difference, and propagates this back to adjust the weights a tiny amount in the direction represented by the gradient.
+- Also, you might want to make it harder for the network to get activated. This is useful to help make sure the nodes in the network only activate when there's a strong response.
+- To do this, you can add a bias - usually a negative number - before you pass the output through a sigmoid or rectified linear unit activation function (RELU)
+- RELU is loads better than sigmoid because it's simple.
+- RELU is just converts the neuron's combined sum of inputs by weights, with bias, into a diagonal line from zero. Parag mentions it in his second week session, further down this page.
 
+## SO...
+
+- Each neuron takes all the inputs from the previous layer
+- It then spits out a number between 0 and 1 that is a combination of all the high or low activation in the prior layer pushed in to a function.
+- This is all just a simple function, that is part of a larger function - the NN is just a function approximator made up of lots of other functions.
+- Here is a surprisingly good explanation that is pretty easy to grasp:
+
+https://www.youtube.com/watch?v=aircAruvnKk
+
+# Homework
+- Now that we've looked in detail at the whole process
+- You should be able to tackle this notebook from Parag Mital. It shows you how to design a Neural Network to generate a new image from scratch based on a separate image. It also reinforces some of the learning we've been through and adds further detail.
+
+https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-CADL-Lecture2.ipynb
+
+- 

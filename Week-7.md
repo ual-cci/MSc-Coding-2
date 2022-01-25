@@ -1,144 +1,420 @@
-# Coding 2 : Advanced Frameworks
 
-# Week 7: Using deep neural networks to classify and generate images
+# Week 7
 
-## 2019-2020
 
-Professor Mick Grierson
+## First : RECAP!
 
-## Recap
+- Last week we looked at a range of machine learning concepts and got some practical, hands on experience with basic models.
+- This was a little complicated, but if you are currently thinking that you can more or less explain in verh basic terms what Supervised learning is, what classification is, and what regression is, then you are probably fine.
+- If you are concerned that you don't feel comfortable with these topics, don't worry - just go back to last week's session and step through the lecture which explains these step by step.
+- Try to focus your mind just on those things, as they are a great place to start for you right now.
 
-Last session we focussed on trying to understand what a simple machine learning system was, and how you could build a very simple one. We learned a lot of things. Some of the most important things we went through were as follows:
+## Homework Review!
 
-- We tend to use Neural Networks to try to transform data without us having to change parameters manually.
-- For example, we might want to build a system that can automatically change input values in order to meet some condition, e.g. making an output value get higher.
-- We can do this by measuring the distance between the output and the desired output, then passing a value derived from this distance back through the network's parameters.
+Let's take a look at the homework before we go any further and see if anyone managed to do anything interesting. It's going to be important for today's workshop.
 
-- This works with single input systems, but is even more powerful if we can have more inputs, so we chain them together
-- We do all this by adjusting the inputs by a small amount, and getting the derivative, which is the difference between input and output for different parameters of the system, scaled by a small amount (we move slowly towards the target..)
+# Part One - what is tensorflow?
 
-![Gradient Descent](https://upload.wikimedia.org/wikipedia/commons/a/a3/Gradient_descent.gif)
+## Tensorflow
+- Machine Learning framework
+- Created by Google
+- Used to design, build and train deep
+- learning models
 
-- When we get all the derivatives together, we get a gradient. This can be thought of as containing direction.
+---
+## Tensorflow
+- Tensorflow is a Python library
+- Optimised for Linear algebra
+- Computes numerical computations via data flow graphs
+---
 
-- We use the gradient to adjust the parameters of the network. The difference propagates back through the network.
-- Input data flows forward through nodes in a graph - this is the forward pass
-- We calculate the gradient and use this to adjust the network parameters - this is the backward pass.
-- We call this "Back Propagation."
-- We can add and squash the output of a bunch of Neurons together with an activation function, such as a sigmoid.
-- We can use this to turn a Neuron into a smoothed-switch with a maximum of 1 and a minimum of 0.
+## Tensorflow
+- Data flow graphs are useful for Machine Learning
+- Because we tend to think about large numerical computations in specific ways
+- e.g. data flowing through mathematical operations
+- edges -> nodes
 
-## This session
+---
 
-- Today we are going to do three things
-- First, we are going to look at how large ensembles of neurons can classify an image, and how we can structure such systems
-- Second, we are going to look at a few interesting Creative uses of these types of systems
-- Finally, we're going to learn more by exploring a Jupyter notebook from Parag Mital's Creative Applications of Deep Learning course, which allows us to build simple networks for the first time.
+## What is a tensor?
+- A good way of thinking about a tensors is to think about a video files
+- A video is a series of frames
+- Each frame contains individual colour values
+- A collection of frames can be thought of as a tensor
 
-# Part One
+---
 
-## BUT FIRST - let's review the work from last week's session.
+- Each individual colour value can be thought of as a scalar
+- A group of colour values can be thought of as a vector
+- For example, RGBA colour values make up a 4D vector (xyzw)
+- A block of vectors can be thought of as a tensor
 
-- I asked you to go through this introductory notebook that shows you how to do basic signal processing on a batch of images.
-- I then asked you to try to do some type of transformation on the image dataset (something you devised yourself).
-- I then asked you to modify the notebook so that you ran the process on a totally different batch of images that you sourced yourself.
-- Getting a dataset is one of the most important, and also simultaneously most annoying aspects of machine learning.
+---
 
-# Part Two - Using deep learning to classify images.
+- The 'RANK' of a tensor can be thought of as how many blocks of vectors it has
+- This is similar to numpy, where the number of dimensions is thought of as the 'rank'
+- But to be perfectly honest the definition isn't that clear cut.
+- For example, you can describe a scalar as a tensor with a rank of zero.
 
-- Take another look at this demo here from Terence Broad:
-- https://blog.terencebroad.com/archive/convnetvis/vis.html
-- This is a simple visualisation of a real CNN classifying a handwritten image
-- The input image flows through layers of a trained network
-- The 'paths' through the different layers show how different aspects of the image are classified by different layers by the network.
-- Let's actually explore a simple program that actually trains this system.
+---
+- It's far simpler to think of it like this:
+- Tensors are data
+- They can also be list of numbers - e.g. vectors, of any dimensionality (rank)
+- They can also be blocks of multidimensional data, such as a bank of images, or a video.
+- They can also be a scaler - e.g. a single value
+- This can be confusing. But it's really not that complicated.
+---
 
-# Exercise 1
+- So tensorflow essentially allows you to construct large arrays of numerical data
+- It also allows you to process this data in large blocks
+- It can do this using the CPU, the GPU, or even a TPU (tensor processing unit)
+- But basically it's just a big bunch of multiplications and additions.
 
-In groups we're going to do an exercise looking at this MNIST notebook here:
+---
+## Things to remember
+- vectors have lots of properties that carry over to large numbers of dimensions
+- Therefore, so do tensors
+- You can normalise tensors (i.e. turn them in to a direction vector)
+- You can get some idea how similar two tensors are by calculating the dot product
+- You can also get the difference and distance between two tensors using euclidean distance (pythagoras)
+- Or cosine distance
+---
+- We went through all these processes in 3 dimensions
+- They are exactly the same in any number of dimensions.
+- Tensorflow attempts to make it easier to do these kinds of operations quickly
 
-https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-MNIST.ipynb
+---
 
-Try to understand what each line is doing with reference to what we described in the lecture. Remember, this is creating a large network layer by layer.
+# Part two : Workshop!
 
-## Exercise 2 : Image Fun with tensorflow
+## Exercise: Getting datasets, processing images and introducing tensorflow
+- Before we start building networks in Tensorflow and exploring what they can do
+- We should probably try and do something simple
+- Like just processing some images
+- As an exercise, we are going to study the following notebook that you were asked to review as homework.
+- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-6-Exercise-intro-to-image-data-and-tensorflow.ipynb
+- Following this, you must make a version of the notebook with at least one major difference that you have introduced yourself. First, you must do some transformation on the image dataset that isn't included in the above document. If you manage to do this, your next task is to collect and process your own dataset instead of the one provided. 
 
-- You will have noticed that you can run the MNIST training demo on Google's colab platform.
+## Useful resources:
+https://easy-tensorflow.com/
 
-This is useful if you can't get notebooks to work, or are having issues using tensorflow.
+https://towardsdatascience.com/pytorch-vs-tensorflow-spotting-the-difference-25c75777377b
 
-https://colab.research.google.com/notebooks/intro.ipynb
+# Part three : Lecture! 
 
-- Colab can be useful if you are wanting to try things out quickly
-- However, it's not necessarily very good if you are trying to do complex things that require long periods of training
-- But you really should try it out!
+## Programming Neural Nets by hand
+- This next tutorial is based on Andrey Karparthy's NN tutorial.
+- https://karpathy.github.io/neuralnets/
+- He puts forward the idea that real values flow forward through simple systems
+- Whilst gradients flow backward through them
+- This is useful for understanding Back Propagation.
+- Let's take a look.
 
-Lots of people are very excited about using deep learning to generate images.
-Two popular techniques are style transfer and using generative image models, such as Generative Adversarial Networks (GANs).
-- Have a look at the following demos from Google on Style Transfer and GANs. You will be learning more about these next term so these are just to whet your appetite:
-- You will need to install tensorflow hub to use these demos. From the terminal:
-```pip install tensorflow_hub```
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf2_arbitrary_image_stylization.ipynb
-- https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/tf_hub_generative_image_module.ipynb
-- Use your own images to create your own style transfer and GAN outputs if you can.
-- Check out some of the other examples:
-https://www.tensorflow.org/hub/tutorials
+```Python
 
-# Part Three : Lecture 
+# We start by creating a simple multiplication 'gate'
+# This is used in the 'forward pass'
+# All this means is that data flows forward through the network
 
-## How neural networks are structured:
+def forwardMultiplyGate(x, y):
+    return x * y
 
-- Different NN systems have different structures
-- There are many different features these structures
-- One good example of such a system is a what is called
-- a "Fully connected network"
+print (forwardMultiplyGate(-2, 3));
 
-## Fully Connected networks
-- It's super easy to understand a fully connected network
-- All this means is that every node in one layer is connected to every node in the next layer
-- This makes a massive web of connections
+print ("we want to get a number bigger than -6 without changing the inputs ourselves. How do we do that?")
 
-## What are the layers doing?
-- We start with a bunch of inputs at the first layer, one for each pixel, for example.
-- We might want to downsample the image first, and convert it to greyscale. We don't need colour to work out what number it is.
-- Then we want to have a bunch of outputs. In the example of the MNIST handwritten digit classification, there are 10 outputs for 10 numbers (0-9).
-- Then, we have what are called 'hidden layers' in-between.
-- They are 'hidden' because we don't monitor their inputs or outputs directly in normal circumstances.
+```
+## Random Local Search
+- In Neural Nets, we tweak the input values
+- until we get closer to the result we are looking for
+- We can use a random local search to do this
+- we could do this randomly by changing x,y randomly by small amounts
+- and keep track of what works best
 
-## Seriously, what do the layers do?
+```python
+# Random Local Search
+# -----------------
 
-- The input layers and hidden layers divide up the task of working out what the image representation needs to be.
-- They do this literally by adding up the values from different parts of the image.
-- This is one reason why the dataset is normalised in terms of size and orientation.
-- However this isn't always necessary. Just mostly necessary!
+# but it's a rubbish idea.
 
-## No but really...
-- First layers might work out some of the edges
-- The hidden layers then spread out the job of representing different aspects of the image input. These are basically different blocks of pixels - just like in Terence's demo.
-- This leads to the output layer receiving a collection of activiations which it can use to determine what the input image is.
+import math
+import random
 
-## Weights, Biases, Activation
-- A trained network is really just a really big grid of weights (values).
-- These weights have been arrived at through the training process, and just tell you what the values of the pixels are for a particular part of the image
-- The training process simply compares the outputs to the input, works out the difference, and propagates this back to adjust the weights a tiny amount in the direction represented by the gradient.
-- Also, you might want to make it harder for the network to get activated. This is useful to help make sure the nodes in the network only activate when there's a strong response.
-- To do this, you can add a bias - usually a negative number - before you pass the output through a sigmoid or rectified linear unit activation function (RELU)
-- RELU is loads better than sigmoid because it's simple.
-- RELU is just converts the neuron's combined sum of inputs by weights, with bias, into a diagonal line from zero. Parag mentions it in his second week session, further down this page.
+x = -2
+y = 3;
 
-## SO...
+def forwardMultiplyGate(x, y):
+    return x * y
 
-- Each neuron takes all the inputs from the previous layer
-- It then spits out a number between 0 and 1 that is a combination of all the high or low activation in the prior layer pushed in to a function.
-- This is all just a simple function, that is part of a larger function - the NN is just a function approximator made up of lots of other functions.
-- Here is a surprisingly good explanation that is pretty easy to grasp:
+tweak_amount = 0.01 # this is a bit like the learning rate
+best_out = -10000000
+best_x = x
+best_y = y
 
-https://www.youtube.com/watch?v=aircAruvnKk
+for k in range(100): # 100 is the number of steps
+    x_try = x + tweak_amount * (random.random() * 2 - 1) # tweak x a bit
+    y_try = y + tweak_amount * (random.random() * 2 - 1) # tweak y a bit
+    out = forwardMultiplyGate(x_try, y_try)
+    if out > best_out:
+        # best improvement yet! Keep track of the x and y
+        best_out = out
+        best_x = x_try
+        best_y = y_try
+        print (best_out)
 
-# Homework
-- Now that we've looked in detail at the whole process
-- You should be able to tackle this notebook from Parag Mital. It shows you how to design a Neural Network to generate a new image from scratch based on a separate image. It also reinforces some of the learning we've been through and adds further detail.
+print ("This works, but is not very efficient.")
 
-https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-7-notebooks/Week-7-CADL-Lecture2.ipynb
+```
 
-- 
+## Numerical Gradient
+- ------------------
+- "The derivative can be thought of as a force on each input
+- as we pull on the output to become higher."
+- ------------------
+
+- Instead of doing a random search,
+- we're going to increase the inputs very slightly
+- and check what happens to the output to see if it's what we expect
+- The amount of change in the output is the DERIVATIVE
+
+- Below, we add h - the tweak amount to x and y,
+- Then we check check the difference between the output
+- And the first output - this difference is
+## the derivative.
+
+```python
+
+def forwardMultiplyGate(x, y):
+    return x * y
+
+x = -2
+y = 3
+out = forwardMultiplyGate(x, y) # -6
+h = 0.0001; # This is the tweak amount. Some say it should be
+# as small as possible but this is small enough
+
+# compute derivative with respect to x
+xph = x + h # -1.9999
+out2 = forwardMultiplyGate(xph, y) # -5.9997
+x_derivative = (out2 - out) / h; # 3.0 - we divide by h to normalise
+
+# compute derivative with respect to y
+yph = y + h # 3.0001
+out3 = forwardMultiplyGate(x, yph) # -6.0002
+y_derivative = (out3 - out) / h # -2.0 - we divide by h to normalise
+
+print ("x_derivative =", x_derivative)
+print ("y_derivative =", y_derivative)
+
+# When we talk about all the inputs together with respect to output,
+# We're actually talking about the GRADIENT
+# not the indiviual derivatives
+
+gradient = [x_derivative,y_derivative]
+
+print ("The Gradient is", gradient)
+
+# move towards the gradient by scaling it a little
+# then moving towards it a bit
+# this is the same as chasing an object
+
+step_size = 0.01; # If this was big, it would work,
+# BUT it might not work with more complex networks
+x = x + (step_size * x_derivative); # x becomes -1.97
+y = y + (step_size * y_derivative); # y becomes 2.98
+out_new = forwardMultiplyGate(x, y) # -5.87! exciting.
+print ("The New Output is", out_new)
+
+```
+
+## So what is the Gradient?
+- The gradient is the direction of the steepest increase
+- This means it's taking the inputs where they need to go
+- To get the output closer to what we want
+- This is exactly how we move towards objects in space
+- Gradients flow backwards through networks
+
+## A different approach
+
+## ANALYTIC GRADIENT
+- -------------------
+
+- The numerical gradient is actually rubbish
+- If we have lots of inputs
+- it is dumb to calculate the gradient
+- by evaluating all the inputs separately all the time
+
+- Instead we're going to use the "analytic gradient"
+- The trick here is that derivative of X actually turned out to be Y
+- So why bother to calculate it at all?
+- Just use Y, and the whole thing gets much simpler to compute
+- As long as we can calculate a base case first, we can use it
+- without having to do so over and over again.
+
+```Python
+
+x = -2
+y = 3
+out = forwardMultiplyGate(x, y)
+x_gradient = y; # because it turns out the gradient of x is y.
+y_gradient = x; # vice versa
+
+step_size = 0.01;
+x += step_size * x_gradient
+y += step_size * y_gradient
+out_new = forwardMultiplyGate(x, y)
+
+print ("New Output =", out_new)
+# In practice NN systems compute the numerical gradient and the analytical gradient
+
+```
+## No inputs though...
+- In order to turn this simple system in to a complex one,
+- We just need lots of these together
+- But we also have to connect them up.
+- In order for this to work, we need to add something extra
+- We need to -add- as well as -multiply-
+
+```Python
+
+# a and b are just local variables, not inputs to the neuron
+def forwardMultiplyGate(a, b):
+    return a * b
+
+def forwardAddGate(a, b):
+    return a + b
+
+def forwardCircuit(x,y,z):
+    q = forwardAddGate(x, y)
+    f = forwardMultiplyGate(q, z)
+    return f
+
+x = -2
+y = 5
+z = -4
+f = forwardCircuit(x, y, z); # output is -12
+
+# Now we add things together, and then multiply
+print (f)
+
+```
+## BUT how do we calculate the gradient now?
+- EASY - we only do it for the inputs we are multiplying.
+- So everything else stays the same
+- It just allows us to chain Neurons together.
+- The derivative of the addition part is always 1
+
+```python
+
+# Let's set this up:
+# initial conditions
+
+def forwardMultiplyGate(a, b):
+    return a * b
+
+def forwardAddGate(a, b):
+    return a + b
+
+def forwardCircuit(x,y,z):
+    q = forwardAddGate(x, y)
+    f = forwardMultiplyGate(q, z)
+    return f
+
+x = -2
+y = 5
+z = -4
+q = forwardAddGate(x, y) # q is 3
+f = forwardMultiplyGate(q, z) # output is -12
+
+print (f)
+
+# gradient of the MULTIPLY gate with respect to its inputs
+# wrt is short for "with respect to"
+derivative_f_wrt_z = q # 3
+derivative_f_wrt_q = z # -4
+
+# derivative of the ADD gate with respect to its inputs
+derivative_q_wrt_x = 1.0
+derivative_q_wrt_y = 1.0
+
+# chain rule
+derivative_f_wrt_x = derivative_q_wrt_x * derivative_f_wrt_q # -4
+derivative_f_wrt_y = derivative_q_wrt_y * derivative_f_wrt_q # -4
+
+# final gradient, from above: [-4, -4, 3]
+gradient_f_wrt_xyz = [derivative_f_wrt_x, derivative_f_wrt_y, derivative_f_wrt_z]
+
+# let the inputs respond to the force/tug:
+step_size = 0.01
+x = x + step_size * derivative_f_wrt_x # -2.04
+y = y + step_size * derivative_f_wrt_y # 4.96
+z = z + step_size * derivative_f_wrt_z # -3.97
+
+# Our circuit now better give higher output:
+q = forwardAddGate(x, y) # q becomes 2.92
+f = forwardMultiplyGate(q, z) # output is -11.59, up from -12!
+
+print (f)
+
+# let's check the derivatives with a numerical gradient check
+# initial conditions
+x = -2
+y = 5
+z = -4
+
+# numerical gradient check
+h = 0.0001;
+x_derivative = (forwardCircuit(x+h,y,z) - forwardCircuit(x,y,z)) / h # -4
+y_derivative = (forwardCircuit(x,y+h,z) - forwardCircuit(x,y,z)) / h # -4
+z_derivative = (forwardCircuit(x,y,z+h) - forwardCircuit(x,y,z)) / h # 3
+
+print (x_derivative,y_derivative,z_derivative)
+print ("That's close enough!")
+
+```
+
+## Activation
+- If the input to a node in a network is high enough
+- We can say that it's activated
+- But often the outputs are really high or really low.
+- It's sometimes useful to squish the output with a function
+- So that negative values tend towards zero
+- And positive values tend towards 1.
+- People use SIGMOID to do this.
+- SIGMOID is an activation function
+
+```python
+# -----------
+# Sigmoid Function - f = 1.0 / (1.0 + math.exp(-x))
+# This function is often used as
+# an activation function in Neural Networks
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+input_sig = np.arange(-10,10)
+output_sig = np.zeros((20))
+
+for val in input_sig:
+    output_sig[val+10] = 1.0 / (1 + math.exp(-val))
+
+
+plt.plot(output_sig)
+plt.plot(input_sig * 0.1) # scaling the input just so we can compare
+plt.show()
+
+```
+## Cue long discussion about how real neural nets work.
+- SO - if you take the node we made
+- And create a row of them
+- And then create another row of them
+- And then connect every node in the first row
+- to every node in the second row
+- Then update the values in each node
+- based on all the derivatives - the gradient
+- And squish the output with a sigmoid function
+- Then you have a two layer network!
+
+
+# No homework this week! Just work on your projects instead :-)

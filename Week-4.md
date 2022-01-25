@@ -1,236 +1,197 @@
 # Coding 2 : Advanced Frameworks
 
-## 2019-2020
+# Week 4 : Embedded systems
+## 2020-2021
 
 Professor Mick Grierson
 
-## Week 4 - Introduction to Python Continued
+## Introduction
+
+So far we have looked at a selection of software languages, platforms and frameworks that are useful for a range of Creative Computing tasks that incorporate graphics, sound, interaction, machine learning etc. We've thought about how we go about common tasks using these systems. However, we've not really considered how we might respond to working outside the context of existing hardware - e.g. a desktop, mobile phone/tablet or laptop scenario.
+
+## The outside world
+Portable devices that can carry out computational tasks in the outside world provide some interesting affordances. Working with small, portable devices opens up many opportunities:
+- Create and install interactive media devices anywhere
+- Use sensors to collect data remotely
+- Build "ambient" computing environments (oh .. wait...what are those?)
+- Design and prototype new mobile devices and platforms
+- Design and prototype new computing hardware for bespoke purposes, e.g. music tech devices, vision mixers, autonomous robots etc.
+
+## Modern hardware prototyping
+
+Planning to deliver everything over existing hardware infrastructure is totally fine. But it has a number of restrictions
+
+- Performance will be defined by capabilities of phones and tablets, or someone else's portable computing hardware (e.g. laptop, phone)
+- So will all interaction (so nothing that isn't currently marketed widely e.g. no sliders, knobs, switches, or tactile interfaces)
+- Consequently, limited capacity for interaction research (new forms of interaction)
+- Locked in to an existing hardware and software ecosystem (e.g. app store)
+- Have to abide by existing hardware and software ecosystem agreements
+- Limited potential for trademarking, patents etc.
+- Not much of a hardware business unless you plan to sell accessories for mobile platforms.   
+
+## Why not just use Arduino?
+
+Arduino is a great platform and very flexible. However, there are a number of things that an Arduino isn't very good at and can't do at all:
+- Produce high resolution interactive graphics
+- Produce professional quality sound and interactive sound outputs
+- Process large amounts of data using algorithms
+- Work with machine learning tools
+- Carry out any complex computations / stats
+- Hold anything substantial in memory
+
+## Limitations of Arduino-type platforms
+Arduino is a certain type of embedded device platform that is often not very fast or capable. It's fine for simple computations. But:
+- They often use quite a simple CPU - e.g. ARM cortex-M:
+- They have very limited memory (required for doing computation!)
+- They are slow - usually between 16 and 42Mhz.
+
+## ARM architectures for embedded devices
+- Many embedded devices use ARM cortex M class devices
+- You can find a list of these devices here:
+- https://en.wikipedia.org/wiki/ARM_Cortex-M
+- These devices are great for some forms of hardware prototyping
+- But very often, they lack the speed of conventional mobile platforms (although they are still used as part of these types of platforms e.g. for additional processes)
+- They are not that great for contemporary robotics for example.
+
+## So what does your phone run on?
+- Your phone probably runs on a device based on ARM architectures.
+- However, the class of ARM device is probably higher:
+- ARM 9 - https://en.wikipedia.org/wiki/ARM9
+- ARM 11 - https://en.wikipedia.org/wiki/ARM11
+- ARM Cortex A7, A53, A72
+- Almost all phones run something like that, or substantially based on it
+- ARM were a British company until a couple of years ago when they were bought by softbank in Japan.
+
+## More powerful System on a Chip - SOC
+- More powerful ARM devices can be used to create better System on a Chip devices (SOC)
+- These types of SOC devices are great for hardware prototypying
+- They can provide processing power comparable to your phone
+- They can be easily expanded to provide excellent interface architecture (serial, USB, GPIO, SDI), graphics (including console-level GPU), Ethernet or even WIFI, bluetooth, and other features.
+- Basically it's a computer - like the one in your mobile phone, or even your chromebook or laptop. But it's tiny.
+
+## Advantages of capable SOC devices
+- Low cost of manufacture
+- Low cost for bulk purchase
+- Open hardware options (all specifications published)
+- Designs for SOC devices available license free for adaptation
+- All SOC parts can be replaced and refactored
+- GPIO
+
+## What this means:
+- SOC devices can do all the things that your phone or even laptop does
+- But you can also wire any electronics to them that you like using GPIO
+- You can also connect custom peripheral hardware using SPI (Serial Peripheral Interface)
+- You can create your own custom SOCs that are identical to prototyping boards that you have used to develop your prototype
+- You can do this at the fraction of the cost and in bulk
+- You can completely customise the system to you needs
+- You can use it to create patentable technology more easily
+- (it's much easier to patent a device than to patent software)
+
+## Prototyping boards that use ARM-style SOCs
+- There are a great many different types of such platforms
+- Beaglebone, PCDuino, Raspi, Jetson Nano, Chip
+- Some of them have FPGAs on them !
+- https://developer.arm.com/tools-and-software/development-boards/fpga-prototyping-boards
+- Field Programmable Gate Array - https://en.wikipedia.org/wiki/Field-programmable_gate_array
+
+## Raspberry PI
+- Raspberry PI is by far the most popular and widely used SOC-based prototyping platform.
+- Raspberry PI is currently at version 4
+- PI4 is ridiculously powerful for such a cheap, small device:
+- SoC: Broadcom BCM2711B0 quad-core A72 (ARMv8-A) 64-bit @ 1.5GHz
+- GPU: Broadcom VideoCore VI (4k dual output)
+- Networking: 2.4 GHz and 5 GHz 802.11b/g/n/ac wireless LAN
+- RAM: 1GB, 2GB, or 4GB LPDDR4 SDRAM
+- Bluetooth: Bluetooth 5.0, Bluetooth Low Energy (BLE)
+- GPIO: 40-pin GPIO header, populated
+- Storage: microSD
+- Ports: 2 × micro-HDMI 2.0, 3.5 mm analogue audio-video jack, 2 × USB 2.0, 2 × USB 3.0, Gigabit Ethernet, Camera Serial Interface (CSI), Display Serial Interface (DSI)
+- Dimensions: 88 mm × 58 mm × 19.5 mm, 46 g
+
+This is more powerful than many laptops.
+
+- (roughly) twice the CPU and RAM spec of the original Macbook air.
+
+- Also has all the connectivity you would need to create a pretty smart robot.
+
+## OS choice
+- You can run whatever OS you like on your SOC as long as it has an kernel that suits the instruction set of your architecture
+- Raspberry PI uses ARM architecture and there's an OS developed to support it.
+- RASPBIAN is based on Debian linux, and is one of the most reliable operating systems available.
+- Why is that?
+- It's also totally free
+
+## What can it do?
+- You can run node, openframeworks, Python 2 or 3 and even Tensorflow, including (with lots of fiddling) a GPU-enabled TF installation.
+- You can set them to read-only mode so that they don't b0rk after you've deployed them
+- You can strip them down so that they boot in seconds and run whatever software you want without intervention
+- You can do all the things you might do with an Arduino in terms of connectivity BUT, there are some important differences   
+
+## GPIO and power
+- GPIO on Raspberry PI isn't the same as Arduino
+- Also, it uses a bit more power
+- But these differences don't stop you doing the same things - you just need to be aware of them.
+- Power consumption on the PI is not always as good as Arduino, depending on what version you use. For example, the PI Zero uses so little power I can barely remember the number because it's so small.
+https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-power
+- You can power the PI from LIPO batteries. Check the milliAmp Hour of the battery (mAh). An phone-charging battery that pumps out 3A and is 10000 mAh can power the PI for hours.
+- But, when connecting devices to and from the PI you need to consider its voltage limitations:
+- PI GPIO inputs are at 3.5v, whereas Arduino outputs 5v, so you will need to use a voltage divider to connect them that way.
+- However, you can power devices from the PI, including Arduino, because the PI has 5v outputs. You can also draw about 1.5 amps from it. That's a lot...
+- https://pinout.xyz
+
+# Demonstration session
+
+## Different PI models
+
+- Let's look at a few different Raspberry PI devices: https://en.wikipedia.org/wiki/Raspberry_Pi
+- In detail, we're going to look at the PI A+, the PI Zero, and the PI 4
+- These all have different hardware, speed, memory limits etc.
+- They also have very different potential uses
+- We're going to examine some of the ways they differ
+- Finally let's look at the GPIO. You can emulate the PI GPIO here: https://create.withcode.uk/python/A3
+
+## Power Consumption
+- These devices are quite efficient, which makes them highly usable for IoT and hardware projects
+- There's a useful article here on power consumption https://raspi.tv/2015/raspberry-pi-zero-power-measurements
+- As you can see, the PI Zero is very efficient
+- This means you can run them from battery packs if those packs can provide enough amps.
+
+## Setting up the PI
+- I'm going to talk you through how to set up the PI
+- We're going to discuss SD cards, OS download and configuration
+- We'll also look at customisation, SSH, communications protocols, memory and overclocking functions
+- Finally we'll discuss headless operation, boot sector corruption and how to avoid it, overlay filesystems and why they are useful etc.
+
+## Using Linux
+- First steps in Linux - using the terminal
+- navigating, changing directory, listing directories
+- running applications and scripts from the terminal, 
+- Here's some help to get you in to using the console:
+https://missing.csail.mit.edu/2020/course-shell/
+- And a terminal cheat sheet:
+https://linoxide.com/guide/linux-cheat-sheet.png
+
+## Downloading Openframeworks
+- Using openframeworks on the PI is very simple
+- You are going to love it
+- We're going to download, configure and run openframeworks
+- If you are interested in making a synthesiser, lots of people have done this with a raspi, but you probably want to buy a hardware audio shield.
+- Also, raspberry pi is a platform used by artists all the time due to its price point.
+
+If you are interested in using a raspberry pi, you can either borrow a raspberry pi 4 from CCI, or purchase your own.
+Usually in this session we would work together to download and install openframeworks on our PI (hint - nightly builds work well)
+Then we would build a simple sound or graphics application and start to think about what else we might do.
+This time, we're going to go through the process of setting up a pi together, and talk through common problems
+I'm also going to get some basic applications running and make sure you've got a good idea how to do that.
+
+## Borrowing a Raspberry PI 4
+We have lots of Raspberry PI 4 devices at CCI. Talk to the technical services team if you are interested in using one.
+If you need help setting it up, you can refer to this video, or see any of the huge number of resources available.
+
+## Exercise
+- Consider how you might restructure and refactor your Arduino projects to work on the PI
+- Work in groups to share ideas about what advantages this might bring e.g. sound and graphics, machine learning, faster on-unit processing
+- What other kinds of projects might you be able to create that were previously out of reach?
+- In groups discuss and plan some small project with the PI.
 
-Last week we did a crash course in Python. This was not as hard as it otherwise might have been as you've already got some solid JavaScript experience, and also spent some time messing around with C++. I'm sure you must still have a lot of questions (for example, how long will it be before I am proficient in these languages? Answer: quite a while), but in general you should at least feel like you understand how variables, conditionals, loops, functions and objects work in Python. To remind you, this is what we looked at:
 
-* Printing to the console, using quotes, indentation / blocks, string concatenation - in particular how this is different between Python 2 and 3.
-* variables : ints, floats, strings, lists, tuples (read-only lists), accessing data in lists, dictionaries. We also looked at using type().
-* Basic operators
-* conditionals (if), loops (for), functions (def)
-- for letter in 'Python': print 'Current Letter :', letter
-* Python keywords, Python comments (#)
-* import statements.
-
-We also did the Python Challenge, which is an excellent mechanism for learning Python. If you haven't had a chance to get to the 5th challenge, that's OK, especially if you have never thought of creating a function that calls itself. I'll talk through the solutions but:
-
-Hackingnote's solutions for Python Challenge are actually really great, and include solutions that work well in Python 3:
-
-https://www.hackingnote.com/en/python-challenge-solutions/level-0
-
-In particular, I recommend that you all have a try at level 7 as it's lots of fun:
-
-https://www.hackingnote.com/en/python-challenge-solutions/level-7
-
-I also asked you to all create your own Python challenge riddle / question. Please send these to me!
-
-
-## What we will cover this session
-
-This session is about common Python libraries and what they are used for. We will look at some basic examples for a small selection of essential tools that you need to know. We'll be looking at these roughly in order of complexity. However, just because they are complex technologies, doesn't mean they are necessarily hard to use.
-
-## But first
-
-Often, you will come across an example, or a library, and all you will really want to know is what methods and functions are available.
-
-This is similar to when you are using an IDE, and you want to look up what member functions are available for an object.
-
-But how can you get more information about a specific python object or command?
-
-There are two main ways
-
-* help(something). Try the following:
-
-help(print), help(range), help(type)
-
-This returns actual python documentation. This is a more or less fully featured system that is designed to give you good information on what a Python object / function can do.
-
-* dir(something)
-
-dir() is very similar to help(), but only returns the attributes that belong to an object that you pass in as an argument. It's not as fully featured as help(), and it can be a bit random what it spits out from object to object, but it tells you what is actually there. Sometimes, this is different to what's in the documentation...
-
-You should be using help() or dir() whenever you're not sure how something works. Don't forget!
-
-##  Core libraries
-
-### matplotlib
-
-https://matplotlib.org/
-
-matplotlib is a library for plotting data using an approach similar to that which can be found in the popular research software Matlab. It is designed to allow you to create plots that are publication quality, but in general, it's just a great tool for seeing what you are doing.
-
-```python
-# this is a bit weird and easy to forget.
-# here we are importing the pyplot functions as plt.
-# we're also importing math so we can do some trig.
-
-import matplotlib.pyplot as plt
-import math
-
-x = range(100)
-y = []
-
-for value in x:
-    y.append(math.sin(value * 0.1))
-
-plt.plot(y)
-
-```
-There are lots of important core plotting features, including bar charts, pie charts, scatter plots etc. Take a look:
-
-https://matplotlib.org/gallery/index.html
-
-### Numpy
-
-https://numpy.org/
-
-Numpy is one of the most powerful and important Python packages. It is excellent for handling multidimensional arrays - e.g. large blocks of data - and has some impressive built in functions for doing vector processing and linear algebra. In general, if you are wanting to process large blocks of numbers, you should be using Numpy.
-
-Numpy arrays are much more powerful that Python lists.
-They allow you to create and manipulate arrays of information, such as large blocks of image data, and process it quickly.
-
-Quick intro to Numpy:
-
-```python
-import numpy as np
-
-# creates an empty 1D array with 100 elements
-i = np.zeros([100])
-
-# creates an empty 3D array with 5 * 5 * 5 elements
-x = np.zeros([5,5,5])
-
-# creates a multidimensional array 3 * 2 by 2 blocks
-y = np.zeros([2,2]*3)
-
-print ("the shape of this array is ", np.shape(i))
-
-print (i)
-
-print ("the shape of this array is ", np.shape(x))
-
-print (x)
-
-print ("the shape of this array is ", np.shape(y))
-
-print(y)
-
-z = np.arange(100).reshape(2, 5, 10)
-
-print(z)
-
-```
-
-https://numpy.org/devdocs/user/quickstart.html
-
-### pandas
-
-To be honest, the main reason people use pandas is because it can read in Microsoft excel files and csv files. This makes it handy for people who naturally use excel to collect and organise data.
-
-There's a good tutorial on how to import and use excel documents in to Python here:
-
-https://www.dataquest.io/blog/excel-and-pandas/
-
-And this cheatsheet is pretty great.  
-
-https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf
-
-- https://pandas.pydata.org/docs/index.html
-
-### urllib
-
-https://pythonspot.com/urllib-tutorial-python-3/
-
-This is a really essential library for Python that you're going to use a lot. You can do lots of cool things that make scraping data much easier, including specifying your user agent, which basically means pretending to be any browser that you like.
-
-It's super easy to use urllib to grab a webpage :
-
-```python
-import urllib.request
-
-html = urllib.request.urlopen('https://www.arts.ac.uk').read()
-print(html)
-
-```
-
-the 'html' variable / object in the above example now has all the data from the web page in it. But parsing HTML is not easy to do at all. Wouldn't it be great if there was some kind of library for parsing HTML easily? That would just be amazing. Oh wait...
-
-### bs4
-
-bs4, or "Beautiful Soup" is a great html parser, and the basis of a very large number of web scraping softwares. If you're building a scraper, you should start with bs4. Here' an example of a script that grabs some webpage data and iterates through it using bs4.
-
-```python
-# Get all the links from reddit world news.
-# Can you spider those links?
-
-from bs4 import BeautifulSoup
-import urllib.request
-
-html = urllib.request.urlopen('http://www.reddit.com/r/worldnews/').read()
-
-soup = BeautifulSoup(html)
-
-# just get all the links. Links are 'a' (as in <a href = "">)
-
-for link in soup.find_all('a'):
-    print(link.get('href'))
-
-```
-
-### bokeh
-
-Bokeh is a great way of creating interactive plots. matplotlib isn't designed for interactive plot generation - it's for generating plots for books and academic papers. Bokeh on the other hand makes it super easy to make a plot that you can interact with on a webpage. Like this :
-
-```python
-from bokeh.plotting import figure, output_file, show
-
-# prepare some data
-x = [1, 2, 3, 4, 5]
-y = [6, 7, 2, 4, 5]
-
-# output to static HTML file
-output_file("lines.html")
-
-# create a new plot with a title and axis labels
-p = figure(title="simple line example", x_axis_label='x', y_axis_label='y')
-
-# add a line renderer with legend and line thickness
-p.line(x, y, legend="Temp.", line_width=2)
-
-# show the results
-show(p)
-
-```
-
-https://docs.bokeh.org/en/latest/docs/user_guide/quickstart.html#userguide-quickstart
-
-
-### gensim
-
-https://radimrehurek.com/gensim/
-
-Gensim is a general purpose Topic modelling and Natural Language Processing library with sentiment analysis, word-vectors, and lots of very useful topic modelling toolkits, such as Latent Semantic Analysis (LSA) and Latent Dirichlit Allocation (LDA - https://en.wikipedia.org/wiki/Latent_Dirichlet_allocation).
-
-It's looking a bit old by modern standards, so you might also want to take a look at the next item in our list!
-
-### Transformers
-
-https://github.com/huggingface/transformers
-
-Hugging Face's Transformers library is an incredible library of contemporary Natural Language Processing tools. For contemporary autosummarisation, text style transfer, and other quite startling NLP demos, check out the website below.
-
-https://huggingface.co/models
-
-
-
-# Exercise
-
-Working in groups, build a simple webscraper that scrapes a set of documents from the internet and summarises them.
-
-If you manage to achieve this, extract keywords from all the different documents and see if any are more popular than others. Search for documents that contain those keywords using Python and then summarise those documents too!
-
-# Homework - No homework this session!! Take some well earned time off, create something in OF, enjoy yourself :-)
