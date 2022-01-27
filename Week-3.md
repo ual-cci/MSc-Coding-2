@@ -27,7 +27,40 @@ https://github.com/ual-cci/MSc-Coding-2/blob/master/week2-slides/C%2B%2B%20memor
 
 BREAK
 
-# Part 2 - Using A-Life to think about objects
+# Object Orientation - a primer
+
+## Inheritance
+- One useful feature of C++ objects is that we can create objects substantially based on other objects
+- We can treat any class as a bass class. This means we don't need to copy all the code from one class to another. Some people like to work this way as it means you write less code.
+- However,  it can also make your code harder to understand as many people can't be bothered to check how the base class actually works, and this often breaks things.
+- But don't worry about this. Just remember, that in your own projects, it will definitely save you time to only write certain code once.
+- A simple example is in games, where your different agents (e.g. game characters) all need to move around a game world in the same way.
+- In that case, it's great to have a class called 'character', and then inherit a hole bunch of code for each character.
+- like this ```class myCharacter : public character```
+- In this case, myCharacter is a derived (child) class, and will inherit all the code from the base (parent) class 'character'.
+- You can inherit from more than one class by listing your classes, separated by commas
+- ```class myCharacter : public character, public rainbow```
+- So this time, this character also has all the propertyies of a rainbow :-)
+- You can inherit from a base class that is derived from another class :-)
+
+## Polymorphism
+- Polymorphism is super easy to understand
+- All it means is that if you have a function in your base (parent) class,  you can have it behave differently in your derived (child) class. 
+- For example, this means your characters can all inherit a 'playSound()' function from your base class, but you can make them play different sounds if you like
+- Of course, this whole process calls in to question the entire reason behind inheriting functions to make code more reusable, but don't think about that. No, seriously, it's not worth bringing it up. Nobody wants to hear that. Nor do they want to hear about how it's possibly pointless because of virtual functions. Just leave it ok?
+
+## Access Specifiers
+- Previously I asked you to just make everything public, because otherwise you wouldn't have been able to call any of your member functions or variables from outside your class.  
+- In general, this is fine when you're starting out. However, it's considered insecure.
+- The problem is that, as I demonstrated previously, when you try to access a variable that is private **outside the class**, you get an error.
+- This would also happen if you inherit something private.
+- To get round this, it's usual to use something called 'encapsulation'.
+- All this means is you write a public function that allows you to set or get the value of a private variable. e.g. ```getMyPrivateVar() { return myPrivateVar; }```
+- Hmmm. 
+- Hmmmm.
+- You can also declare something as 'protected'. This means you can access it from a derived class. 
+
+# Using A-Life to think about objects
 
 - Let's revise class structure so that we know what we're doing. 
 - In order to do this, I'm going to put together one of the examples I gave you a few weeks ago, and that I hope some of you have taken the time to explore as it's a lot of fun, and a good example of how a class can be useful
@@ -313,36 +346,7 @@ void Boid::draw()
    ofCircle(position.x, position.y, 5);
 }
 ```
-## Inheritance
-- One useful feature of C++ objects is that we can create objects substantially based on other objects
-- We can treat any class as a bass class. This means we don't need to copy all the code from one class to another. Some people like to work this way as it means you write less code.
-- However,  it can also make your code harder to understand as many people can't be bothered to check how the base class actually works, and this often breaks things.
-- But don't worry about this. Just remember, that in your own projects, it will definitely save you time to only write certain code once.
-- A simple example is in games, where your different agents (e.g. game characters) all need to move around a game world in the same way.
-- In that case, it's great to have a class called 'character', and then inherit a hole bunch of code for each character.
-- like this ```class myCharacter : public character```
-- In this case, myCharacter is a derived (child) class, and will inherit all the code from the base (parent) class 'character'.
-- You can inherit from more than one class by listing your classes, separated by commas
-- ```class myCharacter : public character, public rainbow```
-- So this time, this character also has all the propertyies of a rainbow :-)
-- You can inherit from a base class that is derived from another class :-)
 
-## Polymorphism
-- Polymorphism is super easy to understand
-- All it means is that if you have a function in your base (parent) class,  you can have it behave differently in your derived (child) class. 
-- For example, this means your characters can all inherit a 'playSound()' function from your base class, but you can make them play different sounds if you like
-- Of course, this whole process calls in to question the entire reason behind inheriting functions to make code more reusable, but don't think about that. No, seriously, it's not worth bringing it up. Nobody wants to hear that. Nor do they want to hear about how it's possibly pointless because of virtual functions. Just leave it ok?
-
-## Access Specifiers
-- Previously I asked you to just make everything public, because otherwise you wouldn't have been able to call any of your member functions or variables from outside your class.  
-- In general, this is fine when you're starting out. However, it's considered insecure.
-- The problem is that, as I demonstrated previously, when you try to access a variable that is private **outside the class**, you get an error.
-- This would also happen if you inherit something private.
-- To get round this, it's usual to use something called 'encapsulation'.
-- All this means is you write a public function that allows you to set or get the value of a private variable. e.g. ```getMyPrivateVar() { return myPrivateVar; }```
-- Hmmm. 
-- Hmmmm.
-- You can also declare something as 'protected'. This means you can access it from a derived class. 
 
 ## Exercise 1 : Inheritance and polymorphism
 
