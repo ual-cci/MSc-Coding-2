@@ -62,8 +62,8 @@ BREAK
 
 # Using A-Life to think about objects
 
-- Let's revise class structure so that we know what we're doing. 
-- In order to do this, I'm going to put together one of the examples I gave you a few weeks ago, and that I hope some of you have taken the time to explore as it's a lot of fun, and a good example of how a class can be useful
+- Let's explore something that has a class structure so that we know what we're doing. 
+- In order to do this, I'm going to put together one of the examples I gave you last week, and that I hope some of you have taken the time to explore as it's a lot of fun, and a good example of how a class can be useful
 
 ## Let's look at a simple artificial life example
 
