@@ -10,7 +10,25 @@
  - We will then look at Access specifiers (public, private, protected), and how we use encapsulation with them.
  
  
-## But First
+## But First - A Review of last week's session
+- We went through a list of common mistakes using C++ and openFrameworks. This stuff is super important. You can find all the information you need on these very important tips right here:
+https://github.com/ual-cci/MSc-Coding-2/blob/master/week2-slides/week-2-C%2B%2B-common-issues.pdf
+
+Let's go through some of this again as it's a very useful refresher!!
+
+- We also did an intro to addons, and looked at ofxMaxim. Let's take another look at how this works.
+
+- Finally we learned about pointers. I want to quickly review the pointer slides - this stuff is very hard to remember so don't worry, it's much more important that you feel comfortable looking it up!!
+
+https://github.com/ual-cci/MSc-Coding-2/blob/master/week2-slides/C%2B%2B%20memory%20and%20pointers-week-2.pdf
+
+# Let's do a homework review!!
+- Everyone had to create a basic openFrameworks app by adapting something simple that they did last term. Hopefully you've all managed to spend the time you need to get this done. It is really simple, but also important. As I said to Phoenix, if all you managed to do was put a picture of a kitten up on a screen, then this is a triumph and you should be proud. If you did more than this, then that's great. 
+
+BREAK
+
+# Part 2 - Using A-Life to think about objects
+
 - Let's revise class structure so that we know what we're doing. 
 - In order to do this, I'm going to put together one of the examples I gave you a few weeks ago, and that I hope some of you have taken the time to explore as it's a lot of fun, and a good example of how a class can be useful
 
