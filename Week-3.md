@@ -347,6 +347,7 @@ void Boid::draw()
 }
 ```
 
+# Homework
 
 ## Exercise 1 : Inheritance and polymorphism
 
@@ -359,8 +360,3 @@ void Boid::draw()
 
 - Working in groups or on your own, try to get your two types of boids to pay attention to each other.
 - Keep them as two separate flocks, but make it so that each group stays away from each other!
-
- # Homework :
- 
- Spend time attempting to complete the exercises to create two interacting A-life systems.
-
