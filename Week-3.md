@@ -34,7 +34,7 @@ BREAK
 
 ## Inheritance
 - One useful feature of C++ objects is that we can create objects substantially based on other objects
-- We can treat any class as a bass class. This means we don't need to copy all the code from one class to another. Some people like to work this way as it means you write less code.
+- We can treat any class as a base class. This means we don't need to copy all the code from one class to another. Some people like to work this way as it means you write less code.
 - However,  it can also make your code harder to understand as many people can't be bothered to check how the base class actually works, and this often breaks things.
 - But don't worry about this. Just remember, that in your own projects, it will definitely save you time to only write certain code once.
 - A simple example is in games, where your different agents (e.g. game characters) all need to move around a game world in the same way.
