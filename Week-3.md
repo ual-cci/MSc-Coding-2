@@ -1,5 +1,5 @@
 
- # Lecture
+ # Session 3
  
  ## C++ Objects - Encapsulation, inheritance and polymorphism.
  
@@ -11,7 +11,10 @@
  
  
 ## But First - A Review of last week's session
-- We went through a list of common mistakes using C++ and openFrameworks. This stuff is super important. You can find all the information you need on these very important tips right here:
+
+- I'll take you through some of the demos and how to use them :-D
+
+- Also, we went through a list of common mistakes using C++ and openFrameworks. This stuff is super important. You can find all the information you need on these very important tips right here:
 https://github.com/ual-cci/MSc-Coding-2/blob/master/week2-slides/week-2-C%2B%2B-common-issues.pdf
 
 Let's go through some of this again as it's a very useful refresher!!
