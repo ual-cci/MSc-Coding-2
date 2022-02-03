@@ -7,7 +7,81 @@ Professor Mick Grierson
 
 ## Introduction
 
-So far we have looked at a selection of software languages, platforms and frameworks that are useful for a range of Creative Computing tasks that incorporate graphics, sound, interaction, machine learning etc. We've thought about how we go about common tasks using these systems. However, we've not really considered how we might respond to working outside the context of existing hardware - e.g. a desktop, mobile phone/tablet or laptop scenario.
+So far we have looked at C++ and JavaScript frameworks that are useful for a range of Creative Computing tasks that incorporate graphics, sound, interaction, machine learning etc. We've thought about how we go about common tasks using these systems. However, we've not really considered how we might respond to working outside the context of existing hardware - e.g. a desktop, mobile phone/tablet or laptop scenario. So this is what we'll be doing today.
+
+# But first
+
+Recap and Homework review.
+
+# Introdusing the Raspi
+
+## Different PI models
+
+- Let's look at a few different Raspberry PI devices: https://en.wikipedia.org/wiki/Raspberry_Pi
+- In detail, we're going to look at the PI A+, the PI Zero, and the PI 4
+- These all have different hardware, speed, memory limits etc.
+- They also have very different potential uses
+- We're going to examine some of the ways they differ
+- Finally let's look at the GPIO. You can emulate the PI GPIO here: https://create.withcode.uk/python/A3
+
+## Power Consumption
+- These devices are quite efficient, which makes them highly usable for IoT and hardware projects
+- There's a useful article here on power consumption https://raspi.tv/2015/raspberry-pi-zero-power-measurements
+- As you can see, the PI Zero is very efficient
+- This means you can run them from battery packs if those packs can provide enough amps.
+
+## Setting up the PI
+- I'm going to talk you through how to set up the PI
+- We're going to discuss SD cards, OS download and configuration
+- We'll also look at customisation, SSH, communications protocols, memory and overclocking functions
+- Finally we'll discuss headless operation, boot sector corruption and how to avoid it, overlay filesystems and why they are useful etc.
+
+## Using Linux
+- First steps in Linux - using the terminal
+- navigating, changing directory, listing directories
+- running applications and scripts from the terminal, 
+- Here's some help to get you in to using the console:
+https://missing.csail.mit.edu/2020/course-shell/
+- And a terminal cheat sheet:
+https://linoxide.com/guide/linux-cheat-sheet.png
+
+## Downloading Openframeworks
+- Using openframeworks on the PI is very simple
+- You are going to love it
+- We're going to download, configure and run openframeworks
+- If you are interested in making a synthesiser, lots of people have done this with a raspi, but you probably want to buy a hardware audio shield.
+- Also, raspberry pi is a platform used by artists all the time due to its price point.
+
+If you are interested in using a raspberry pi, you can either borrow a raspberry pi 4 from CCI, or purchase your own.
+Usually in this session we would work together to download and install openframeworks on our PI (hint - nightly builds work well)
+Then we would build a simple sound or graphics application and start to think about what else we might do.
+This time, we're going to go through the process of setting up a pi together, and talk through common problems
+I'm also going to get some basic applications running and make sure you've got a good idea how to do that.
+
+## Borrowing a Raspberry PI 4
+We have lots of Raspberry PI 4 devices at CCI. Talk to the technical services team if you are interested in using one.
+If you need help setting it up, you can refer to this video, or see any of the huge number of resources available.
+
+## What frameworks do I need for different types of projects?
+
+Let's think about some theoretical examples and consider what frameworks we should probably choose.
+
+- You want to make a real-time interactive installation with 2D or 3D computer graphics and sound, potentially using hardware sensors.
+You should probably do this in C++, possibly with openFrameworks. You could do it in Unity but remember, Unity is not the best platform for integrating real-time sensors, and isn't a good platform for sound due to its buffer implementation (it's targetted for plaback of sound effects). You could also choose JavaScript, but this won't be as performant as C++, but you would need to negotiate the sensor situation depending on the browser you are using.
+- You want to create an online, interactive networked environment where people in different places can interact and respond to each other.
+You should probablly do this in JavaScript. You could do it in Python but it would be harder, and there would not be much benefit. You could also do this in unity if it's a simple 2D or 3D game.
+- You want to build audio or video processing software for other artists
+Do this in C++. You can build great sound toys in JavaScript, but for anything serious, you need to hit the metal. For audio plugins, Juce is fine and very simple to use once you've tried openFrameworks.
+- You want to create new artworks using generative deep learning
+You should probably do this in Python.
+- You want to create a device that can use machine learning
+You need to use an embedded arm device that is capable of holding reasonably sized models in memory. Consider something like a PI or similar
+- You want to create a game or interactive VR experience
+You can do this in Unity and it will be great. For better performance, Unreal is also good. Or you can just DIY in openGL the way I taught you. It's not hard.
+- You want to scrape data off the internet and process it as part of a project
+You need to do this in Python, possibly using BS4 and/or scrapey and gensim for processing.
+- You want to create an internet of things device of some kind.
+Raspi zero.
 
 ## The outside world
 Portable devices that can carry out computational tasks in the outside world provide some interesting affordances. Working with small, portable devices opens up many opportunities:
@@ -139,56 +213,8 @@ https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-power
 - However, you can power devices from the PI, including Arduino, because the PI has 5v outputs. You can also draw about 1.5 amps from it. That's a lot...
 - https://pinout.xyz
 
-# Demonstration session
 
-## Different PI models
-
-- Let's look at a few different Raspberry PI devices: https://en.wikipedia.org/wiki/Raspberry_Pi
-- In detail, we're going to look at the PI A+, the PI Zero, and the PI 4
-- These all have different hardware, speed, memory limits etc.
-- They also have very different potential uses
-- We're going to examine some of the ways they differ
-- Finally let's look at the GPIO. You can emulate the PI GPIO here: https://create.withcode.uk/python/A3
-
-## Power Consumption
-- These devices are quite efficient, which makes them highly usable for IoT and hardware projects
-- There's a useful article here on power consumption https://raspi.tv/2015/raspberry-pi-zero-power-measurements
-- As you can see, the PI Zero is very efficient
-- This means you can run them from battery packs if those packs can provide enough amps.
-
-## Setting up the PI
-- I'm going to talk you through how to set up the PI
-- We're going to discuss SD cards, OS download and configuration
-- We'll also look at customisation, SSH, communications protocols, memory and overclocking functions
-- Finally we'll discuss headless operation, boot sector corruption and how to avoid it, overlay filesystems and why they are useful etc.
-
-## Using Linux
-- First steps in Linux - using the terminal
-- navigating, changing directory, listing directories
-- running applications and scripts from the terminal, 
-- Here's some help to get you in to using the console:
-https://missing.csail.mit.edu/2020/course-shell/
-- And a terminal cheat sheet:
-https://linoxide.com/guide/linux-cheat-sheet.png
-
-## Downloading Openframeworks
-- Using openframeworks on the PI is very simple
-- You are going to love it
-- We're going to download, configure and run openframeworks
-- If you are interested in making a synthesiser, lots of people have done this with a raspi, but you probably want to buy a hardware audio shield.
-- Also, raspberry pi is a platform used by artists all the time due to its price point.
-
-If you are interested in using a raspberry pi, you can either borrow a raspberry pi 4 from CCI, or purchase your own.
-Usually in this session we would work together to download and install openframeworks on our PI (hint - nightly builds work well)
-Then we would build a simple sound or graphics application and start to think about what else we might do.
-This time, we're going to go through the process of setting up a pi together, and talk through common problems
-I'm also going to get some basic applications running and make sure you've got a good idea how to do that.
-
-## Borrowing a Raspberry PI 4
-We have lots of Raspberry PI 4 devices at CCI. Talk to the technical services team if you are interested in using one.
-If you need help setting it up, you can refer to this video, or see any of the huge number of resources available.
-
-## Exercise
+## Next steps
 - Consider how you might restructure and refactor your Arduino projects to work on the PI
 - Work in groups to share ideas about what advantages this might bring e.g. sound and graphics, machine learning, faster on-unit processing
 - What other kinds of projects might you be able to create that were previously out of reach?
