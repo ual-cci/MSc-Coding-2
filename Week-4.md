@@ -11,9 +11,10 @@ So far we have looked at C++ and JavaScript frameworks that are useful for a ran
 
 # But first
 
-Recap and Homework review.
+Recap and Homework review. LetLet's take a look at the work I asked you to do, and think about some common problems.
 
-# Introdusing the Raspi
+
+# Introducing the Raspi
 
 ## Different PI models
 
@@ -82,6 +83,8 @@ You can do this in Unity and it will be great. For better performance, Unreal is
 You need to do this in Python, possibly using BS4 and/or scrapey and gensim for processing.
 - You want to create an internet of things device of some kind.
 Raspi zero.
+
+# Lecture : Arm devices
 
 ## The outside world
 Portable devices that can carry out computational tasks in the outside world provide some interesting affordances. Working with small, portable devices opens up many opportunities:
