@@ -1,7 +1,6 @@
 # Coding 2 : Advanced Frameworks
 
 # Week 4 : Embedded systems
-## 2020-2021
 
 Professor Mick Grierson
 
@@ -218,7 +217,7 @@ https://www.jeffgeerling.com/blogs/jeff-geerling/raspberry-pi-zero-power
 
 
 ## Next steps
-- Consider how you might restructure and refactor your Arduino projects to work on the PI
+- Consider how you might restructure and refactor your openFrameworks or Arduino projects to work on the PI
 - Work in groups to share ideas about what advantages this might bring e.g. sound and graphics, machine learning, faster on-unit processing
 - What other kinds of projects might you be able to create that were previously out of reach?
 - In groups discuss and plan some small project with the PI.
