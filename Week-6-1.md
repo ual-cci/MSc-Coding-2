@@ -223,7 +223,25 @@ Hugging Face's Transformers library is an incredible library of contemporary Nat
 
 https://huggingface.co/models
 
+For example, you can create a google colab notebook, import huggingface, and do an autosummarisation very easily. Here's some code that gets you started with this:
 
+```python
+
+!pip install transformers
+from transformers import pipeline
+
+# Open and read the article - if using colab, you can upload text to the sample_data folder, or connect your google drive. 
+f = open("article.txt", "r", encoding="utf8")
+to_tokenize = f.read()
+
+# Initialize the HuggingFace summarization pipeline
+summarizer = pipeline("summarization")
+summarized = summarizer(to_tokenize, min_length=75, max_length=300)
+
+# Print summarized text
+print(summarized)
+
+```
 
 # Exercise
 
