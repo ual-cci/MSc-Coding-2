@@ -227,8 +227,10 @@ https://huggingface.co/models
 
 # Exercise
 
-Working in groups, build a simple webscraper that scrapes a set of documents from the internet and summarises them.
+- Working in groups, build a simple webscraper that scrapes a bunch of documents from the internet and creates a summary of each one. One way to do this is to start with a bunch of pages, and then follow all the links on those pages, scraping new documents as you go. Then you can record each link with a quick summary in a list.
 
-If you manage to achieve this, extract keywords from all the different documents and see if any are more popular than others. Search for documents that contain those keywords using Python and then summarise those documents too!
+- You can use any method you like to do the summary - you could just select a couple of sentences, or use some form of summarisation tool (Huggingface has one, Gensim might have one, or you could make one up).
+
+- If you manage to achieve this, extract keywords by counting the total number of similar words from all the different documents and see if any are more popular than others. Search for documents that contain those keywords using Python and then summarise those documents too!
 
 # Homework - take a look at the notebook in this repository called Week-6-Exercise-intro-to-image-data-and-tensorflow. :-)
