@@ -1,7 +1,5 @@
 # Coding 2 : Advanced Frameworks
 
-## 2019-2020
-
 Professor Mick Grierson
 
 ## Week 6 - Introduction to Python Continued
