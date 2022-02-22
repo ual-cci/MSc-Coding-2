@@ -88,9 +88,8 @@ https://github.com/ual-cci/MSc-Coding-2/blob/master/week5-notebooks/Pixel%20Push
 Go through the notebook and try to create your own image using a custom expression of your own.
 
 ## Exercise 2: Getting datasets, processing images and introducing tensorflow
-- Before we start building networks in Tensorflow and exploring what they can do
-- We should probably try and do something simple
-- Like just processing some images
+- Before we start building networks in Tensorflow and exploring what they can do, we should probably try and do something simple
+- Like just processing some images !!!
 - As an exercise, we are going to study the following notebook that you were asked to review as homework.
 - https://github.com/ual-cci/MSc-Coding-2/blob/master/Week-6-Exercise-intro-to-image-data-and-tensorflow.ipynb
 - Following this, you must make a version of the notebook with at least one major difference that you have introduced yourself. First, you must do some transformation on the image dataset that isn't included in the above document. If you manage to do this, your next task is to collect and process your own dataset instead of the one provided. 
