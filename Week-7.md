@@ -9,10 +9,6 @@
 - If you are concerned that you don't feel comfortable with these topics, don't worry - just go back to last week's session and step through the lecture which explains these step by step.
 - Try to focus your mind just on those things, as they are a great place to start for you right now.
 
-## Homework Review!
-
-Let's take a look at the homework before we go any further and see if anyone managed to do anything interesting. It's going to be important for today's workshop.
-
 # Part One - what is tensorflow?
 
 ## Tensorflow
@@ -87,7 +83,17 @@ Let's take a look at the homework before we go any further and see if anyone man
 
 # Part two : Workshop!
 
-## Exercise: Getting datasets, processing images and introducing tensorflow
+## There are two exercises you can do:
+
+## Exercise 1 - More NUMPY
+
+Numpy is one of those things you just need to get used to. In order to help you, I've created a notebook that shows you how to use Numpy to create images with expressions, exactly as we did last term, using the same algorithms. This should help you get your head round some of the unfamiliar stuff that we're going to tackle this session, particularly in Exercise 2!
+
+https://github.com/ual-cci/MSc-Coding-2/blob/master/week5-notebooks/Pixel%20Pushing%20in%20Numpy.ipynb
+
+Go through the notebook and try to create your own image using a custom expression of your own.
+
+## Exercise 2: Getting datasets, processing images and introducing tensorflow
 - Before we start building networks in Tensorflow and exploring what they can do
 - We should probably try and do something simple
 - Like just processing some images
