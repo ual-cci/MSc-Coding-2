@@ -1,13 +1,7 @@
 
-# Week 7
+# Week 7 - What on earth is Machine Learning?
 
-
-## First : RECAP!
-
-- Last week we looked at a range of machine learning concepts and got some practical, hands on experience with basic models.
-- This was a little complicated, but if you are currently thinking that you can more or less explain in verh basic terms what Supervised learning is, what classification is, and what regression is, then you are probably fine.
-- If you are concerned that you don't feel comfortable with these topics, don't worry - just go back to last week's session and step through the lecture which explains these step by step.
-- Try to focus your mind just on those things, as they are a great place to start for you right now.
+So - this week, we are going to start thinking about what machine learning is in very basic terms. You will be doing much more of this next term, but this session, particularly the lecture, is simply a way to get you thinking about some of the language, concepts and theoretical ideas at play. In the lecture, you'll learn what a tensor is and how you can use one - or lots. Also, there's an exercise to help ease you in to numpy arrays, which to be honest are largely similar constructs. Finally, there's a lecture inrtoducing the basics of Neural Networks, which defines some core concepts for you, including what a perceptron is, what gradients are, what back propogation is, and why these things matter. 
 
 # Part One - what is tensorflow?
 
