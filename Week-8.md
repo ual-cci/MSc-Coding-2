@@ -2,13 +2,11 @@
 
 # Week 8: Using deep neural networks to classify and generate images
 
-## 2019-2020
-
 Professor Mick Grierson
 
 ## Recap
 
-Last session we focussed on trying to understand what a simple machine learning system was, and how you could build a very simple one. We learned a lot of things. Some of the most important things we went through were as follows:
+Last session we focussed on trying to understand what a simple machine learning system was, and how you could build a very basic one. We learned a lot of things. Some of the most important things we went through were as follows:
 
 - We tend to use Neural Networks to try to transform data without us having to change parameters manually.
 - For example, we might want to build a system that can automatically change input values in order to meet some condition, e.g. making an output value get higher.
