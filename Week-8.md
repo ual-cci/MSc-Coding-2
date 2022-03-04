@@ -35,16 +35,16 @@ Last session we focussed on trying to understand what a simple machine learning 
 
 # Part One
 
-## BUT FIRST - let's review the work from last week's session.
+## BUT FIRST - let's recap the work from last week's session.
 
-- I asked you to go through this introductory notebook that shows you how to do basic signal processing on a batch of images.
+- I asked you to go through an introductory notebook that shows you how to do basic signal processing on a batch of images.
 - I then asked you to try to do some type of transformation on the image dataset (something you devised yourself).
 - I then asked you to modify the notebook so that you ran the process on a totally different batch of images that you sourced yourself.
 - Getting a dataset is one of the most important, and also simultaneously most annoying aspects of machine learning.
 
 # Part Two - Using deep learning to classify images.
 
-- Take another look at this demo here from Terence Broad:
+- Take a look at this demo here from Terence Broad:
 - https://blog.terencebroad.com/archive/convnetvis/vis.html
 - This is a simple visualisation of a real CNN classifying a handwritten image
 - The input image flows through layers of a trained network
