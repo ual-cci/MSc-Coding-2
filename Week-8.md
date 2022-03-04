@@ -4,7 +4,7 @@
 
 Professor Mick Grierson
 
-## Recap
+## Part one : Recap
 
 Last session we focussed on trying to understand what a simple machine learning system was, and how you could build a very basic one. We learned a lot of things. Some of the most important things we went through were as follows:
 
@@ -26,21 +26,21 @@ Last session we focussed on trying to understand what a simple machine learning 
 - We can add and squash the output of a bunch of Neurons together with an activation function, such as a sigmoid.
 - We can use this to turn a Neuron into a smoothed-switch with a maximum of 1 and a minimum of 0.
 
+# Last week's exercises
+
+- I asked you to go through an introductory notebook that shows you how to do basic signal processing on a batch of images.
+- I then asked you to try to do some type of transformation on the image dataset (something you devised yourself).
+- I then asked you to modify the notebook so that you ran the process on a totally different batch of images that you sourced yourself.
+- Getting a dataset is one of the most important, and also simultaneously most annoying aspects of machine learning.
+
+
+
 ## This session
 
 - Today we are going to do three things
 - First, we are going to look at how large ensembles of neurons can classify an image, and how we can structure such systems
 - Second, we are going to look at a few interesting Creative uses of these types of systems
 - Finally, we're going to learn more by exploring a Jupyter notebook from Parag Mital's Creative Applications of Deep Learning course, which allows us to build simple networks for the first time.
-
-# Part One
-
-## BUT FIRST - let's recap the work from last week's session.
-
-- I asked you to go through an introductory notebook that shows you how to do basic signal processing on a batch of images.
-- I then asked you to try to do some type of transformation on the image dataset (something you devised yourself).
-- I then asked you to modify the notebook so that you ran the process on a totally different batch of images that you sourced yourself.
-- Getting a dataset is one of the most important, and also simultaneously most annoying aspects of machine learning.
 
 # Part Two - Using deep learning to classify images.
 
