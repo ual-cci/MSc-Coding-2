@@ -100,7 +100,7 @@ Good things and bad things about various ofxAddons contributions.
 Let's build creative software together!!!!!
 
 
-## PART THREE: LECTURE
+## PART THREE: Additional material
 
 - Common mistakes in openFrameworks
 
